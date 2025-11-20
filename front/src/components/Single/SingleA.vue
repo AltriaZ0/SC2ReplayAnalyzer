@@ -49,14 +49,14 @@
           </div>
           <div class="options">
             <label class="opt"><input type="checkbox" v-model="opts.fulltime"/>统计全部时间（即使不发生建造）</label>
-            <label class="opt"><input type="checkbox" v-model="opts.cancel"/> 提醒建造后取消的信息 </label>
+            <!-- <label class="opt"><input type="checkbox" v-model="opts.cancel"/> 提醒建造后取消的信息 </label> -->
             <label class="opt"><input type="checkbox" v-model="opts.buildList"/> 建筑建造统计 </label>
             <label class="opt"><input type="checkbox" v-model="opts.upgradeList"/> 科技升级统计 </label>
             <label class="opt"><input type="checkbox" v-model="opts.UnitList"/> 单位建造统计 </label>
-            <label class="opt"><input type="checkbox" v-model="opts.terranFly"/> 不统计Terran的建筑移动 </label>
-            <label class="opt"><input type="checkbox" v-model="opts.workerNumber"/> 农民数量统计(demo) </label>
-            <label class="opt"><input type="checkbox" v-model="opts.exportXlsx"/> 导出 Excel（.xlsx）</label>
-            <label class="opt"><input type="checkbox" v-model="opts.exportTxt"/> 导出 txt（旧功能）</label>
+            <!-- <label class="opt"><input type="checkbox" v-model="opts.terranFly"/> 不统计Terran的建筑移动 </label> -->
+            <!-- <label class="opt"><input type="checkbox" v-model="opts.workerNumber"/> 农民数量统计(demo) </label> -->
+            <!-- <label class="opt"><input type="checkbox" v-model="opts.exportXlsx"/> 导出 Excel（.xlsx）</label> -->
+            <!-- <label class="opt"><input type="checkbox" v-model="opts.exportTxt"/> 导出 txt（旧功能）</label> -->
           </div>
           <!-- <div class="row">
             <div class="col">
@@ -83,9 +83,9 @@
             <!-- <button class="btn" :disabled="!fileMeta || busy" @click="quickPreview">快速预览</button> -->
           </div>
 
-          <div class="progress" v-if="busy">
+          <!-- <div class="progress" v-if="busy">
             <div class="bar" :style="{ width: progress + '%' }"></div>
-          </div>
+          </div> -->
           <p class="hint" v-if="errorMsg">{{ errorMsg }}</p>
         </div>
       </section>
@@ -167,7 +167,7 @@ const opts = reactive({
   analyze_type: "alone",
   output_dir: '' as string,
 
-  fulltime: true,
+  fulltime: false,
   cancel: true,
   buildList: true,
   upgradeList: true,
@@ -175,7 +175,8 @@ const opts = reactive({
   terranFly: false,
   workerNumber: true,
   exportXlsx: true,
-  exportTxt: true
+  exportTxt: true,
+  exportSummary: false
   // tz: 'local',
   // lang: 'zh'
 })
@@ -256,8 +257,6 @@ async function updateFileMetaFromPath(path: string, nameFromCaller?: string) {
   errorMsg.value = ''
 }
 
-
-
 async function openExportDir() {
   console.log("result.value.playersInfo.output_dir:",result.value.output)
   const exportDir = result.value.output
@@ -331,7 +330,7 @@ function clearFile() {
 
 function resetOptions() {
   opts.analyze_type= "alone"
-  opts.fulltime= true
+  opts.fulltime= false
   opts.cancel= true
   opts.buildList= true
   opts.upgradeList= true
@@ -340,6 +339,7 @@ function resetOptions() {
   opts.workerNumber= true
   opts.exportXlsx= true
   opts.exportTxt= true
+  opts.exportSummary= false
   // opts.tz = 'local'
   // opts.lang = 'zh'
 }
@@ -355,12 +355,10 @@ onMounted(async () => {
   // })
 
   opts.output_dir = await appDataDir() 
-
   unlistenFileDrop = await listen<string[]>('tauri://drag-drop', async  (event) => {
 
     const paths = event.payload.paths
     if (!paths || !paths.length) return
-    console.log("测试通过")
     const path = paths[0]
     const name = path.split(/[/\\]/).pop() || '回放文件'
 

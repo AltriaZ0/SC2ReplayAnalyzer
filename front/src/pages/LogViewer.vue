@@ -33,6 +33,14 @@ import Sidebar from '../components/Sidebar.vue';
 
 import { RouterView, useRoute } from 'vue-router'
 
+document.addEventListener('contextmenu', (event) => {
+    const target = event.target;
+    const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable;
+    if (!isInput) {
+        event.preventDefault();
+    }
+});
+
 const route = useRoute()
 </script>
 
@@ -62,6 +70,7 @@ const route = useRoute()
   --bg:#0f1113;
   --panel:#1a1d21;
   --panel-2:#171a1e;
+  --btn-ghost-bg: rgba(15, 23, 42, 0.2);
 }
 
   .mainBody{

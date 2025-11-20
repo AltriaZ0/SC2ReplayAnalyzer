@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Dashboard from '../components/DashBoard.vue'
-
-
 import Homepage from '../components/Home/Homepage.vue'
 import Guide from '../components/Home/Guide.vue'
 import UpdateHistory from '../components/Home/UpdateHistory.vue'
@@ -19,8 +17,9 @@ import floatingBanner from '../components/Reminder/FloatingBanner.vue'
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'Root',
     component: Dashboard,
+    redirect: '/Home/guide', 
     children: [
       {
         path: 'Home',
@@ -30,7 +29,7 @@ const routes = [
           { path: 'UpdateHistory', component: UpdateHistory },
           { path: 'About', component: About },
           // 默认重定向到 guide
-          { path: '', redirect: 'Home/guide' }
+          { path: '', redirect: '/Home/guide' }
         ]
       },
       { path: 'my-data', component: Mydata }, // 根路径默认跳转到 /Home

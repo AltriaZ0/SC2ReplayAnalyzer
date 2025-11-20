@@ -13,15 +13,7 @@ else:
 LOG_DIR = BASE_DIR / "logs"
 DATA_DIR = BASE_DIR / "data"
 
-# 项目信息常量
-# with open( BASE_DIR / "pyproject.toml", "rb") as f:
-#     pyproject_data = tomllib.load(f)
-    
-# NAME = pyproject_data["project"]["name"]
-# VERSION = pyproject_data["project"]["version"]
-# UPDATE_DATE = pyproject_data["project"]["date-updated"]
-
-NAME = "SC2RepAnalysis"
+NAME = "SC2ReplayAnalyzer"
 VERSION = "1.4.0"
 UPDATE_DATE = "2025-11-09"
 

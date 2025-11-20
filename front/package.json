@@ -1,5 +1,5 @@
 {
-  "name": "sc2rep-frontend",
+  "name": "SC2ReplayAnalyzer",
   "private": true,
   "type": "module",
   "scripts": {

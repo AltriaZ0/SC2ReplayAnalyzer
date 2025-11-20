@@ -5,14 +5,14 @@
       <router-link to="/Home/UpdateHistory" class="nav-item">更新历史</router-link>
       <router-link to="/Home/About" class="nav-item">关于</router-link>
       
-      <div class="dropdown">
+      <!-- <div class="dropdown">
         <span class="nav-item dropdown-toggle">筛选</span>
         <div class="dropdown-menu">
           <a href="#" class="dropdown-item">A</a>
           <a href="#" class="dropdown-item">B</a>
           <a href="#" class="dropdown-item">C</a>
         </div>
-      </div> 
+      </div>  -->
      
     </div>
 
@@ -50,7 +50,9 @@
 .content {
   flex: 1;
   height: calc(100vh - var(--nav-height));
+    margin: 0 10px;
   margin-top: var(--nav-height);
+
   overflow-y: auto;
   overflow-x: hidden;
   padding: 16px 5px;
@@ -69,12 +71,12 @@
 }
 
 .nav-item:hover {
-  background-color: #343638b9;
+  background-color: #66666666;
   color: #ffffff;
 }
 
 .router-link-active {
-  background-color: #8a5252b9;
+  background-color: #66666666;
   color: #ffffff;
 }
 </style>

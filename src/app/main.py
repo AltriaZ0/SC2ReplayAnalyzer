@@ -3,7 +3,6 @@ from app.log import setup_logging, LOG
 from app.constants import VERSION, UPDATE_DATE
 import argparse
 from app.analysis.core import analyse_core, analyse_core_cmd
-from app.ProcessTrain.Trans import Trans
 import sys, json
 
 def parse_args(argv=None):
@@ -22,9 +21,6 @@ def parse_args(argv=None):
     s2 = sub.add_parser("multi", help="多回放分析")
     s2.add_argument("--full", action="store_true")
 
-    # train
-    s3 = sub.add_parser("train", help="训练")
-    s3.add_argument("--kind", choices=["8","9"], required=True)
     return p.parse_args(argv)
 
 def main(argv=None) -> int:
@@ -39,9 +35,7 @@ def main(argv=None) -> int:
         #     LOG.info("这其实是一个配置的测试：Fulltime mode not activated.")
 
         args = parse_args(argv)
-        if args.cmd == "train":
-            Trans(args.kind)
-        elif args.cmd == "json":
+        if args.cmd == "json":
             sys.stdin.reconfigure(encoding="utf-8")
             sys.stdout.reconfigure(encoding="utf-8")
             json_data = sys.stdin.read()

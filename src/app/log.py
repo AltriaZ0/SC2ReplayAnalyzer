@@ -1,7 +1,7 @@
 import logging
-
 from logging.handlers import RotatingFileHandler
 from app.constants import LOG_DIR
+
 LOG = logging.getLogger("app")  # 本模块（及子模块）公用 logger
 
 def setup_logging(level: str = "INFO") -> None:

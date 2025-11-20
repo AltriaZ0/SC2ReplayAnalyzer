@@ -15,7 +15,7 @@ node_modules/
 # rep & logs
 rep/
 logs/
-
+SC2RepAnalysis/
 # VSCode
 .vscode/
 *.jks
@@ -24,7 +24,7 @@ logs/
 build
 dist
 __pycache__
-.venv
+.SC2venv
 .env
 main.spec
 

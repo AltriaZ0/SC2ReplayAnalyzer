@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import { listen } from '@tauri-apps/api/event'
+import { listen,emit} from '@tauri-apps/api/event'
 import { register as registerShortcut, unregisterAll } from '@tauri-apps/plugin-global-shortcut'
 
 // 显示文字 & 样式
@@ -58,6 +58,8 @@ onMounted(async () => {
   const un2 = await listen('screen-banner:resetBlink', () => {
     resetTimer()
   })
+
+  await emit('screen-banner:ready')
 })
 
 onBeforeUnmount(() => {

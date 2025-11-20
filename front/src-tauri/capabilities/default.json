@@ -28,8 +28,11 @@
     "core:tray:default",
     "fs:scope-appdata-recursive",
     "fs:allow-appdata-read-recursive",
+    "fs:allow-read",
+    "fs:allow-read-dir",
     "fs:allow-appdata-write-recursive",
     "opener:default",
+    "core:window:allow-set-size",
     "fs:default",
       {
       "identifier": "opener:allow-open-path",

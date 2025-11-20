@@ -1,10 +1,10 @@
-# SC2RepAnalysis
+# SC2ReplayAnalyzer
 A Analysis Tool for starcraft2 replay ,  based of sc2reader.
 
 Communicate with me: *zanjune@163.com*
 
 ## Download
-下载 SC2RepAnalysis 1.3.3: https://pan.baidu.com/s/1V-115EhV-T00InQX3ucX1w?pwd=alan 
+下载 SC2ReplayAnalyzer 1.3.3: https://pan.baidu.com/s/1V-115EhV-T00InQX3ucX1w?pwd=alan 
 
 提取码(Password)：alan 
 
@@ -35,7 +35,7 @@ https://zhuanlan.zhihu.com/p/668752079
 #### 1.1.2更新内容
 增加了进度条，支持显示关键时间点的存活单位
 
-txt文件和excel文件会生成在SC2RepAnalysis文件夹中
+txt文件和excel文件会生成在SC2ReplayAnalyzer文件夹中
 
 修复了之前版本的bug
 
@@ -113,3 +113,13 @@ txt文件和excel文件会生成在SC2RepAnalysis文件夹中
 
 #### 1.4.3 & 1.4.4
 继续完善UI
+
+### 1.5.0
+实现了UI页面
+实现了简单的分析配置
+实现了悬浮文字小插件的tauri实现
+软件更名为SC2ReplayAnalyzer
+
+## 截至目前更新，已经发现的bug
+P使用星空加速加速生产/科技升级后，会导致分析的生产/升级时间不准确
+当前程序如果分析老版本replay，如果老版本的单位的生产时间进行过调整，会导致分析的生产时间不准确

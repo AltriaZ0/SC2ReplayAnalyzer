@@ -2,7 +2,7 @@ from app.libsK import *
 from app.constants import DATA_DIR
 from app.config import settings
 import traceback
-
+import tempfile
 LOG = logging.getLogger("app.analysis")
 
 class ReplayAnalyzer:
@@ -14,7 +14,7 @@ class ReplayAnalyzer:
         # 'analyze_type': 'alone',
         # 'cancel': True, 
         # 'exportTxt': True,
-        #  'exportXlsx': True,
+        #  '目录': True,
         #  'fulltime': True, 
         # 'output_dir': 'C:\\Users\\Altria\\AppData\\Roaming\\com.altria.sc2repshell', 
         # 'terranFly': False, 
@@ -33,7 +33,8 @@ class ReplayAnalyzer:
             'output_dir': '',  #不使用
             'terranFly': False,  
             'upgradeList': True, # √    
-            'workerNumber': False # √  
+            'workerNumber': False, # √  
+            'exportSummary': True
             }
            
         self.options = options
@@ -135,12 +136,51 @@ class ReplayAnalyzer:
             # self._write_text_report() # TODO
             # self._write_excel_reports() # TODO
             self.build_replay_info()
-            
+            self.upsert_index()
             return self.replay_info
         except Exception as e:
             LOG.error("Analysis failed for %s: %s", self.rep_name, str(e))
             LOG.error(traceback.format_exc())
             return -1
+        
+    def _normalize_to_list(self, raw):
+        if isinstance(raw, list):
+            return [e for e in raw if isinstance(e, dict)]
+        if isinstance(raw, dict):
+            return [raw]
+        return []
+
+    def upsert_index(self):
+
+        index_dir  = Path(self.output_dir).parent / "index"
+        index_dir.mkdir(parents=True, exist_ok=True)
+        idx = index_dir / "replay_index.json"
+        LOG.info("生成json文件的位置：%s", idx)
+        data =self.replay_info
+        content = []
+
+        if idx.exists():
+            try:
+                content = json.loads(idx.read_text(encoding="utf-8"))
+            except Exception:
+                content = []
+
+        content = self._normalize_to_list(content)
+
+        key = data.get("output")
+
+        if key:
+            content = [e for e in content if e.get("output") != key]
+
+        content.append(data)
+
+        with tempfile.NamedTemporaryFile("w", delete=False, dir=index_dir, encoding="utf-8") as f:
+            json.dump(content, f, ensure_ascii=False, indent=2)
+            tmp = Path(f.name)
+        os.replace(tmp, idx)
+
+        LOG.info("生成json文件--ok")
+        return idx
 
     def _load_replay(self):
         self.replay = load_replay(self.replaypath, load_level=4)
@@ -548,6 +588,8 @@ class ReplayAnalyzer:
             player_name = re.match('\w{0,}',str(i)[11:]).group()
             self.player_BaseInfo[player_name] = {}
             self.player_BaseInfo[player_name]["buildOrder"] = []
+            self.player_BaseInfo[player_name]["note"] = ""
+            self.player_BaseInfo[player_name]["versus"] = ""
             file.write("选手{}的建造列表：\n".format(i))
             j=0
             DataForPd[player_name]=[]
@@ -567,8 +609,10 @@ class ReplayAnalyzer:
             try:
                 if i==self.replay.players[0]:
                     self.racebattle='{}v{}'.format(self.replay.players[0].play_race[0],self.replay.players[1].play_race[0])
+                    self.player_BaseInfo[player_name]["versus"] = re.match('\w{0,}',str(self.replay.players[1])[11:]).group() + "({})".format(self.replay.players[1].play_race)
                 else:
                     self.racebattle='{}v{}'.format(self.replay.players[1].play_race[0],self.replay.players[0].play_race[0])
+                    self.player_BaseInfo[player_name]["versus"] = re.match('\w{0,}',str(self.replay.players[0])[11:]).group() + "({})".format(self.replay.players[0].play_race)
             except:
                 self.racebattle='{}v{}'.format(self.replay.players[0].play_race[0],"None")
 
@@ -740,9 +784,9 @@ class ReplayAnalyzer:
                     j+=1
                 j+=1 
             file.write("\n-------------------------------------------------------------------------------\n")
-            Inf_to_excel = pd.DataFrame(DataForPd[self.PdS[-1][0]],columns=self.whichItem)
             output_path = "{}/{}-{}-{}-{}-{}-{}.xlsx".format(self.output_path,self.PdS[-1][0],self.PdS[-1][1],self.PdS[-1][2],self.PdS[-1][3],self.PdS[-1][5],self.rep_name[:-10])
             self.player_BaseInfo[player_name]["outputPath"]=output_path
+            Inf_to_excel = pd.DataFrame(DataForPd[self.PdS[-1][0]],columns=self.whichItem)
             Inf_to_excel.to_excel(output_path,index=False)
         file.close()
 
@@ -755,6 +799,6 @@ class ReplayAnalyzer:
         self.replay_info["playersInfo"] = self.player_BaseInfo
         self.replay_info["winner"] = self.winner
         self.replay_info["region"] = self.replay.region
-        self.replay_info["endTime"] = self.replay.end_time
+        self.replay_info["endTime"] = str(self.replay.end_time)
         self.replay_info["raceBattle"] = self.racebattle
         self.replay_info["output"] = self.output_path

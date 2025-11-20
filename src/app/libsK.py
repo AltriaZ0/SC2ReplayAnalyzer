@@ -9,6 +9,7 @@ import logging
 import tomli as tomllib
 from pathlib import Path
 from typing import Callable, Iterable, Optional, Dict, Any, List
+import json
 
 
-__all__ = ["pd", "os", "re", "sys", "time", "Counter" , "logging", "tomllib", "Path", "load_replay", "Callable", "Iterable", "Optional", "Dict", "Any", "List"]
+__all__ = ["pd", "os", "re", "sys", "time", "Counter" , "logging", "tomllib", "Path", "load_replay", "Callable", "Iterable", "Optional", "Dict", "Any", "List", "json"]

@@ -43,16 +43,16 @@
           <span>屏幕提醒</span>
         </router-link>
 
-        <router-link to="/practice" class="nav-item sub-item" active-class="active">
+        <!-- <router-link to="/practice" class="nav-item sub-item" active-class="active">
           <span>流程练习</span>
-        </router-link>
+        </router-link> -->
       </div>
     </nav>
 
 
-    <div data-tauri-drag-region class="settings">
+    <!-- <div data-tauri-drag-region class="settings">
       <router-link  id="set" to="/settings"> 设置</router-link>
-    </div>
+    </div> -->
   </aside>
 </template>
 

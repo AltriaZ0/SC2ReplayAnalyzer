@@ -4,7 +4,7 @@
     <header class="toolbar">
       <h1 class="title">屏幕提醒</h1>
       <button class="btn" @click="reset">重置</button>
-      <button class="btn" @click="saveToLocal">保存</button>
+      <!-- <button class="btn" @click="saveToLocal">保存</button> -->
       <button class="btn primary" @click="toggleShow">
         {{ state.show ? '隐藏悬浮' : '显示悬浮' }} (Ctrl+Shift+S)
       </button>
@@ -32,10 +32,8 @@
           <div>
             <label class="label">粗细</label>
             <select v-model.number="state.font.weight" class="input">
-              <option :value="400">Regular</option>
-              <option :value="600">Semibold</option>
-              <option :value="700">Bold</option>
-              <option :value="800">ExtraBold</option>
+              <option :value="400">正常</option>
+              <option :value="600">加粗</option>
             </select>
           </div>
         </div>
@@ -89,7 +87,7 @@
             </select>
           </div>
         </div>
-
+<!-- 
         <div class="grid-3" style="margin-top: 12px;">
           <div>
             <label class="label">窗口宽度（px）</label>
@@ -106,9 +104,9 @@
               <option value="center">居中（最大 960px）</option>
             </select>
           </div>
-        </div>
+        </div> -->
 
-        <div class="grid-3" style="margin-top: 12px;">
+        <!-- <div class="grid-3" style="margin-top: 12px;">
           <div>
             <label class="label">层级 z-index</label>
             <input class="input" type="number" v-model.number="state.layout.zIndex" min="10" max="999999" />
@@ -144,15 +142,15 @@
               <code>`</code> 重置闪烁倒计时
             </span>
           </div>
-        </div>
+        </div> -->
 
-        <div class="tips">
+        <!-- <div class="tips">
           快捷键：
           <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> 显示/隐藏；
           <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>↑/↓</kbd> 调整字号；
           <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> 复制当前文字；
           <code>`</code>（全局）重置即将闪烁的时间。
-        </div>
+        </div> -->
       </section>
 
       <section class="right">
@@ -171,7 +169,7 @@
 import { reactive, computed, onMounted, onUnmounted, watch } from 'vue'
 import { WebviewWindow } from '@tauri-apps/api/webviewWindow'
 import { LogicalSize } from '@tauri-apps/api/window'
-import { emit } from '@tauri-apps/api/event'
+import {listen, emit } from '@tauri-apps/api/event'
 import { register as registerShortcut, unregisterAll } from '@tauri-apps/plugin-global-shortcut'
 
 const BANNER_LABEL = 'screen-banner'
@@ -242,16 +240,17 @@ function emitUpdate() {
       pointer: state.layout.pointer,
       widthMode: state.layout.width,
     },
-    window: {
-      width: state.window.width,
-      height: state.window.height,
-    },
+    // window: {
+    //   width: state.window.width,
+    //   height: state.window.height,
+    // },
     behavior: {
       blinkEnabled: state.behavior.blinkEnabled,
       blinkAfter: state.behavior.blinkAfter,
       blinkDuration: state.behavior.blinkDuration,
     },
   })
+  console.log('emitUpdate')
 }
 
 // ---------------- 窗口管理 ----------------
@@ -267,8 +266,10 @@ async function openBannerWindow() {
 
   bannerWin = new WebviewWindow(BANNER_LABEL, {
     url: '/floating-banner',
-    width: state.window.width,
-    height: state.window.height,
+    // width: state.window.width,
+    // height: state.window.height,
+    width: 1920,
+    height: 1080,
     x: 0,
     y: 0,
     decorations: false,
@@ -307,24 +308,28 @@ async function toggleShow() {
   state.show = !state.show
 
   if (state.show) {
+    saveToLocal()
     await openBannerWindow()
     // 打开后立刻发一次当前状态
-    emitUpdate()
+      setTimeout(() => {
+        emitUpdate()
+    }, 100) 
   } else {
     await closeBannerWindow()
+
   }
 }
 
 // 窗口尺寸变化时，同步给子窗口（如果已存在）
-watch(
-  () => [state.window.width, state.window.height],
-  ([w, h]) => {
-    if (bannerWin) {
-      bannerWin.setSize(new LogicalSize(w, h))
-      emitUpdate()
-    }
-  }
-)
+// watch(
+//   () => [state.window.width, state.window.height],
+//   ([w, h]) => {
+//     if (bannerWin) {
+//       bannerWin.setSize(new LogicalSize(w, h))
+//       emitUpdate()
+//     }
+//   }
+// )
 
 // ---------------- 工具 ----------------
 const shadowMap: Record<string, string> = {
@@ -360,8 +365,8 @@ function reset() {
   state.layout.width = 'full'
   state.layout.zIndex = 99999
   state.layout.pointer = 'none'
-  state.window.width = 1920
-  state.window.height = 60
+  // state.window.width = 1920
+  // state.window.height = 60
   state.behavior.blinkEnabled = true
   state.behavior.blinkAfter = 180
   state.behavior.blinkDuration = 30
@@ -372,11 +377,26 @@ const STORE_KEY = 'screen-reminder-v1'
 function saveToLocal() {
   localStorage.setItem(STORE_KEY, JSON.stringify(state))
 }
+
 function loadFromLocal() {
   try {
     const raw = localStorage.getItem(STORE_KEY)
-    if (raw) Object.assign(state, JSON.parse(raw))
-  } catch {}
+    if (raw) {
+      const parsed = JSON.parse(raw)
+      // 逐个属性合并，防止整个 state 代理对象被破坏
+      if (parsed.text !== undefined) state.text = parsed.text
+      if (parsed.font) Object.assign(state.font, parsed.font)
+      if (parsed.colors) Object.assign(state.colors, parsed.colors)
+      if (parsed.style) Object.assign(state.style, parsed.style)
+      if (parsed.layout) Object.assign(state.layout, parsed.layout)
+      if (parsed.window) Object.assign(state.window, parsed.window)
+      if (parsed.behavior) Object.assign(state.behavior, parsed.behavior)
+      // 恢复 show 状态为 false，防止一打开APP就自动弹窗（如果这是你期望的）
+      state.show = false 
+    }
+  } catch (e) {
+    console.error('Load failed', e)
+  }
 }
 
 // 快捷键（窗口内）
@@ -400,16 +420,22 @@ onMounted(async () => {
   window.addEventListener('keydown', onKey)
 
   // 全局快捷键：在 Windows 任意界面按 `，重置闪烁倒计时
-  try {
-    await registerShortcut('`', (event) => {
-      console.log('global ` pressed in floating window')
-      if (event.state === 'Pressed') {
-        emit('screen-banner:resetBlink')
-      }
-    })
-  } catch (err) {
-    console.warn('register global shortcut failed', err)
-  }
+  // try {
+  //   await registerShortcut('`', (event) => {
+  //     console.log('global ` pressed in floating window')
+  //     if (event.state === 'Pressed') {
+  //       emit('screen-banner:resetBlink')
+  //     }
+  //   })
+  // } catch (err) {
+  //   console.warn('register global shortcut failed', err)
+  // }
+
+  await listen('screen-banner:ready', () => {
+    console.log('Floating banner is ready, syncing state...')
+    emitUpdate()
+  })
+
 })
 
 onUnmounted(() => {

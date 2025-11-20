@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
-  "productName": "sc2rep-frontend",
-  "version": "0.1.0",
-  "identifier": "com.altria.sc2repshell",
+  "productName": "SC2ReplayAnalyzer",
+  "version": "1.5.0",
+  "identifier": "SC2ReplayAnalyzer",
   "build": {
     "frontendDist": "../dist",
     "devUrl": "http://localhost:5173",
@@ -31,10 +31,11 @@
   },
   "bundle": {
     "active": true,
-    "targets": "all",
+    "targets": ["nsis"],
     "resources": [
       "bin/main.exe",
-      "bin/"
+      "bin/",
+      "WebView2Loader.dll"
     ],
     "icon": [
       "icons/32x32.png",

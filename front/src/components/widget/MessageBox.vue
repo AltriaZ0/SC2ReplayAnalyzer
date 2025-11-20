@@ -10,9 +10,9 @@
     </div>
 
     <!-- 展开/收起按钮 -->
-    <button class="toggle-btn" @click="isCollapsed = !isCollapsed">
+    <!-- <button class="toggle-btn" @click="isCollapsed = !isCollapsed">
       {{ isCollapsed ? '展开' : '收起' }}
-    </button>
+    </button> -->
 
   </div>
 </template>
