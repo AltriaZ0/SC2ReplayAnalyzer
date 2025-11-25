@@ -1,8 +1,11 @@
 <!-- src/pages/FloatingBanner.vue -->
 <template>
   <div class="floating-banner-root">
-    <div class="banner" :style="bannerStyle" :class="{ blinking }">
+    <!-- <div class="banner" :style="bannerStyle" :class="{ blinking }">
       {{ text || '保持心态平稳 · 注意热键 · 记得喝水' }}
+    </div> -->
+    <div class="banner" :style="bannerStyle">
+      {{ text || '示例提示文字' }}
     </div>
   </div>
 </template>
@@ -15,31 +18,31 @@ import { register as registerShortcut, unregisterAll } from '@tauri-apps/plugin-
 // 显示文字 & 样式
 const text = ref('')
 const bannerStyle = ref<Record<string, any>>({})
-const blinking = ref(false)
+// const blinking = ref(false)
 let timerId: number | null = null
 let stopId: number | null = null
-let blinkAfter = 180
-let blinkDuration = 30
-let blinkEnabled = true
+// let blinkAfter = 180
+// let blinkDuration = 30
+// let blinkEnabled = true
 
 let unlisten: (() => void) | null = null
 
-function resetTimer() {
-  blinking.value = false
-  if (timerId) clearTimeout(timerId)
-  if (stopId) clearTimeout(stopId)
+// function resetTimer() {
+//   blinking.value = false
+//   if (timerId) clearTimeout(timerId)
+//   if (stopId) clearTimeout(stopId)
 
-  if (!blinkEnabled) return
+//   if (!blinkEnabled) return
 
-  timerId = window.setTimeout(() => {
-    blinking.value = true
-    if (blinkDuration > 0) {
-      stopId = window.setTimeout(() => {
-        blinking.value = false
-      }, blinkDuration * 1000)
-    }
-  }, blinkAfter * 1000)
-}
+//   timerId = window.setTimeout(() => {
+//     blinking.value = true
+//     if (blinkDuration > 0) {
+//       stopId = window.setTimeout(() => {
+//         blinking.value = false
+//       }, blinkDuration * 1000)
+//     }
+//   }, blinkAfter * 1000)
+// }
 
 onMounted(async () => {
   // 监听从主窗口发来的事件
@@ -47,17 +50,17 @@ onMounted(async () => {
     const payload = event.payload as { text: string; style: Record<string, any>; behavior: Record<string, any> }
     text.value = payload.text
     bannerStyle.value = payload.style
-    if (payload.behavior) {
-    blinkEnabled = !!payload.behavior.blinkEnabled
-    blinkAfter = payload.behavior.blinkAfter ?? blinkAfter
-    blinkDuration = payload.behavior.blinkDuration ?? blinkDuration
-    }
-    resetTimer()
+    // if (payload.behavior) {
+    // blinkEnabled = !!payload.behavior.blinkEnabled
+    // blinkAfter = payload.behavior.blinkAfter ?? blinkAfter
+    // blinkDuration = payload.behavior.blinkDuration ?? blinkDuration
+    // }
+    // resetTimer()
   })
 
-  const un2 = await listen('screen-banner:resetBlink', () => {
-    resetTimer()
-  })
+  // const un2 = await listen('screen-banner:resetBlink', () => {
+  //   resetTimer()
+  // })
 
   await emit('screen-banner:ready')
 })
@@ -76,11 +79,11 @@ onBeforeUnmount(() => {
   text-align: center;
   border-radius: 10px;
 }
-.blinking {
+/* .blinking {
   animation: blink 0.8s linear infinite;
 }
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0.2; }
-}
+} */
 </style>

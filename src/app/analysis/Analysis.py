@@ -44,7 +44,7 @@ class ReplayAnalyzer:
         self.whichItem = ["时间"]
         # if(self.options["Population"]):
             # self.whichItem.append("人口")
-        self.whichItem.append("人口数量")
+        # self.whichItem.append("人口数量")
         if(self.options["workerNumber"]):
             self.whichItem.append("工人数量")
         if(self.options["UnitList"]):
@@ -84,8 +84,6 @@ class ReplayAnalyzer:
             "起飞","脱离",
             # "电池","气矿"
                                 ] 
-
-
         # 中间过程数组
         self.unit_born_events = [] # 单位出生事件：未按时间和player分组
         self.full_unit_events = [] # 完整单位出生事件：未按时间和player分组
@@ -657,13 +655,13 @@ class ReplayAnalyzer:
                 #----------------非常混沌的部分-数据整理：遍历各个项目，对重复的计数，对处于同一秒的整合-----------#
 
                 # 人口数量统计：读取的玩家的信息
-                population_number=''
-                if j<len(self.pse_players[i]):
-                    if same_second and j + 1 < len(self.pse_players[i]):
-                        population_number=self.pse_players[i][j+1] if self.pse_players[i][j+1] else self.pse_players[i][j] if self.pse_players[i][j] else ''
-                    else:
-                        population_number=self.pse_players[i][j] if self.pse_players[i][j] else ''
-                dataPerSecond["population"] = str(population_number)
+                # population_number=''
+                # if j<len(self.pse_players[i]):
+                #     if same_second and j + 1 < len(self.pse_players[i]):
+                #         population_number=self.pse_players[i][j+1] if self.pse_players[i][j+1] else self.pse_players[i][j] if self.pse_players[i][j] else ''
+                #     else:
+                #         population_number=self.pse_players[i][j] if self.pse_players[i][j] else ''
+                # dataPerSecond["population"] = str(population_number)
                 
                 # 农民数量统计
                 if self.options["workerNumber"]:

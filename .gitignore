@@ -16,6 +16,8 @@ node_modules/
 rep/
 logs/
 SC2RepAnalysis/
+SC2ReplayAnalyzer/
+replays/
 # VSCode
 .vscode/
 *.jks
