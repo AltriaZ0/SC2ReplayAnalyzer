@@ -4,6 +4,9 @@
     <header class="toolbar">
       <h1 class="title">屏幕提醒</h1>
       <button class="btn" @click="reset">重置</button>
+      <button class="btn" :class="{ 'active': !state.locked }" @click="toggleLock">
+        {{ state.locked ? '🔒 已锁定' : '🔓 调整位置' }}
+      </button>
       <!-- <button class="btn" @click="saveToLocal">保存</button> -->
       <button class="btn primary" @click="toggleShow">
         {{ state.show ? '隐藏悬浮' : '显示悬浮' }} (Ctrl+Shift+S)
@@ -17,7 +20,7 @@
           v-model="state.text"
           class="textarea"
           rows="5"
-          placeholder="在这里输入提醒文字…&#10;例如：今天 20:00 训练；喝水；保持热键连贯性。"
+          placeholder="在这里输入提醒文字…&#10;例如：四分半点攻防。"
         />
 
         <div class="grid-2">
@@ -151,13 +154,19 @@
           <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> 复制当前文字；
           <code>`</code>（全局）重置即将闪烁的时间。
         </div> -->
+
+          <div style="margin-top: 20px; font-size: 12px; color: #666; line-height: 1.5;">
+            提示：<br/>
+            1. 只有点击上方 <b>"解锁位置"</b> 后，悬浮窗才可以被鼠标选中并拖动。<br/>
+            2. 锁定后，鼠标会穿透悬浮窗（点击穿透），不影响你操作背后的内容。
+         </div>
       </section>
 
       <section class="right">
         <div class="preview-title">预览</div>
         <div class="preview">
           <div class="banner" :style="bannerStyle">
-            {{ state.text || '（示例）保持心态平稳 · 注意热键 · 记得喝水' }}
+            {{ state.text || '示例提示文字' }}
           </div>
         </div>
       </section>
@@ -179,6 +188,7 @@ let bannerWin: WebviewWindow | null = null
 const state = reactive({
   text: '',
   show: false,
+  locked:true,
   font: {
     size: 28,
     family: "Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial",
@@ -220,6 +230,13 @@ const bannerStyle = computed(() => ({
   lineHeight: String(state.style.lineHeight),
   padding: `${state.style.paddingY}px ${state.style.paddingX}px`,
   boxShadow: shadowMap[state.style.shadow],
+  whiteSpace: 'pre', 
+  maxWidth: '1200px',
+  width: 'fit-content',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  cursor: state.locked ? 'default' : 'move',
+  pointerEvents: state.locked ? 'none' : 'auto',
 }))
 
 const bannerWrapStyle = computed(() => ({
@@ -231,6 +248,21 @@ const bannerWrapStyle = computed(() => ({
   justifyContent: state.layout.width === 'full' ? 'stretch' : 'center',
 }))
 
+async function toggleLock() {
+  state.locked = !state.locked
+  await updateLockState()
+  emitUpdate() // 通知子窗口更新样式
+}
+
+async function updateLockState() {
+  if (!bannerWin) return
+  // true = 忽略鼠标（穿透/锁定），false = 捕获鼠标（不穿透/可拖动）
+  await bannerWin.setIgnoreCursorEvents(state.locked)
+  if (!state.locked) {
+    await bannerWin.setFocus() // 解锁时聚焦，方便操作
+  }
+}
+
 function emitUpdate() {
   emit('screen-banner:update', {
     text: state.text,
@@ -238,6 +270,7 @@ function emitUpdate() {
     layout: {
       zIndex: state.layout.zIndex,
       pointer: state.layout.pointer,
+      // pointer: state.locked ? 'none' : 'auto', // [修改] 确保逻辑一致
       widthMode: state.layout.width,
     },
     // window: {
@@ -249,6 +282,7 @@ function emitUpdate() {
       blinkAfter: state.behavior.blinkAfter,
       blinkDuration: state.behavior.blinkDuration,
     },
+    locked: state.locked
   })
   console.log('emitUpdate')
 }
@@ -268,8 +302,8 @@ async function openBannerWindow() {
     url: '/floating-banner',
     // width: state.window.width,
     // height: state.window.height,
-    width: 1920,
-    height: 1080,
+    width: 400,
+    height: 100,
     x: 0,
     y: 0,
     decorations: false,
@@ -282,15 +316,18 @@ async function openBannerWindow() {
   
   bannerWin.once('tauri://created', async () => {
     try {
-      await bannerWin?.setIgnoreCursorEvents(true)
+      await updateLockState()
+      // await bannerWin?.setIgnoreCursorEvents(true)
     } catch (e) {
       console.warn('setIgnoreCursorEvents failed', e)
     }
   })
+
   bannerWin.once('tauri://destroyed', () => {
     bannerWin = null
     state.show = false
   })
+
 }
 
 async function closeBannerWindow() {
@@ -313,7 +350,7 @@ async function toggleShow() {
     // 打开后立刻发一次当前状态
       setTimeout(() => {
         emitUpdate()
-    }, 100) 
+    }, 1000) 
   } else {
     await closeBannerWindow()
 
@@ -370,6 +407,8 @@ function reset() {
   state.behavior.blinkEnabled = true
   state.behavior.blinkAfter = 180
   state.behavior.blinkDuration = 30
+  state.locked = true // [新增]
+  updateLockState()   // [新增]
 }
 
 // 持久化（localStorage）
@@ -504,7 +543,7 @@ watch(
 
 .preview-title { font-size: 12px; color: #a6adbb; margin-bottom: 8px; }
 .preview { border: 1px dashed #2a2f36; border-radius: 12px; padding: 10px; background: #0f1113; }
-.banner { width: 100%; text-align: center; border-radius: 10px; }
+.banner { width: 100%; text-align: left; border-radius: 10px; }
 
 /* 悬浮条容器（如果以后用 teleport） */
 .floating-banner { position: fixed; top: 0; left: 0; right: 0; }

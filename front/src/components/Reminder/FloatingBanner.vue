@@ -1,32 +1,35 @@
-<!-- src/pages/FloatingBanner.vue -->
 <template>
-  <div class="floating-banner-root">
-    <!-- <div class="banner" :style="bannerStyle" :class="{ blinking }">
-      {{ text || '保持心态平稳 · 注意热键 · 记得喝水' }}
-    </div> -->
-    <div class="banner" :style="bannerStyle">
-      {{ text || '示例提示文字' }}
-    </div>
+  <div 
+    ref="containerRef"
+    class="banner-container" 
+    :style="containerStyle"
+    data-tauri-drag-region
+  >
+    {{ text || '示例提示文字' }}
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { listen,emit} from '@tauri-apps/api/event'
-import { register as registerShortcut, unregisterAll } from '@tauri-apps/plugin-global-shortcut'
+import { getCurrentWindow, LogicalSize } from '@tauri-apps/api/window'
 
 // 显示文字 & 样式
 const text = ref('')
 const bannerStyle = ref<Record<string, any>>({})
+
+const containerStyle = ref<Record<string, any>>({})
+const containerRef = ref<HTMLElement | null>(null)
+
 // const blinking = ref(false)
-let timerId: number | null = null
-let stopId: number | null = null
+// let timerId: number | null = null
+// let stopId: number | null = null
 // let blinkAfter = 180
 // let blinkDuration = 30
 // let blinkEnabled = true
 
 let unlisten: (() => void) | null = null
-
+let resizeObserver: ResizeObserver | null = null
 // function resetTimer() {
 //   blinking.value = false
 //   if (timerId) clearTimeout(timerId)
@@ -44,12 +47,45 @@ let unlisten: (() => void) | null = null
 //   }, blinkAfter * 1000)
 // }
 
+const updateWindowSize = async () => {
+  await nextTick()
+  const el = containerRef.value
+  if (!el) return
+
+  // 获取实际渲染宽度
+  // +2 防止某些 DPI 下边缘裁切
+  const width = el.offsetWidth + 2
+  const height = el.offsetHeight + 2
+
+  const appWindow = getCurrentWindow()
+  await appWindow.setSize(new LogicalSize(width, height))
+}
+
 onMounted(async () => {
   // 监听从主窗口发来的事件
-  unlisten = await listen('screen-banner:update', (event) => {
+  const appWindow = getCurrentWindow()
+
+  unlisten = await listen('screen-banner:update', async(event) => {
     const payload = event.payload as { text: string; style: Record<string, any>; behavior: Record<string, any> }
     text.value = payload.text
-    bannerStyle.value = payload.style
+    containerStyle.value = {
+      ...payload.style,
+
+      width: 'fit-content', 
+      height: 'fit-content',
+      // 强制最大宽度
+      maxWidth: '1200px',
+      // 溢出直接裁切
+      whiteSpace: 'pre', 
+      
+      margin: '0',
+      pointerEvents: payload.locked ? 'none' : 'auto'
+    }
+      await appWindow.setIgnoreCursorEvents(payload.locked)
+    if (!payload.locked) {
+      await appWindow.setFocus()
+    }
+    // bannerStyle.value = payload.style
     // if (payload.behavior) {
     // blinkEnabled = !!payload.behavior.blinkEnabled
     // blinkAfter = payload.behavior.blinkAfter ?? blinkAfter
@@ -61,23 +97,37 @@ onMounted(async () => {
   // const un2 = await listen('screen-banner:resetBlink', () => {
   //   resetTimer()
   // })
+ if (containerRef.value) {
+    resizeObserver = new ResizeObserver(() => {
+      updateWindowSize()
+    })
+    resizeObserver.observe(containerRef.value)
+  }
 
   await emit('screen-banner:ready')
 })
 
 onBeforeUnmount(() => {
   unlisten && unlisten()
+  if (resizeObserver) resizeObserver.disconnect()
 })
 </script>
 
 <style>
-.floating-banner-root {
-  width: 100%;
+:global(body) {
+  margin: 0;
+  padding: 0;
+  background: transparent !important; 
+  overflow: hidden;
 }
-.banner {
-  width: 100%;
-  text-align: center;
+
+.banner-container {
+  width: fit-content;
+  text-align: left; 
   border-radius: 10px;
+  user-select: none; 
+  cursor: default;
+  min-width: 0; 
 }
 /* .blinking {
   animation: blink 0.8s linear infinite;
