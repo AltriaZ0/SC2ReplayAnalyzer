@@ -1,5 +1,5 @@
 # SC2ReplayAnalyzer
-A Analysis Tool for starcraft2 replay ,  based of sc2reader.
+A analyze Tool for starcraft2 replay ,  based of sc2reader.
 
 Communicate with me: *zanjune@163.com*
 

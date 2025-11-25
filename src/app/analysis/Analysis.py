@@ -23,8 +23,8 @@ class ReplayAnalyzer:
 
         if not options:
            options = {
-            'UnitList': False,   # √  
-            'buildList': False,   # √  
+            'UnitList': True,   # √  
+            'buildList': True,   # √  
             'analyze_type': '', # 不使用
             'cancel': True, 
             'exportTxt': True, 
@@ -75,7 +75,15 @@ class ReplayAnalyzer:
         self.upgrade_times = self._load_toml(DATA_DIR / "upgrade.toml")["Ulist"]
 
         # 分析配置：
-        self.buildIgnoreList = ["菌毯","建造后取消","防空管子","补给站","水晶","起飞","脱离","电池","气矿"] 
+        self.buildIgnoreList = [
+            # "菌毯",
+            "建造后取消",
+            # "防空管子",
+            # "补给站",
+            # "水晶",
+            "起飞","脱离",
+            # "电池","气矿"
+                                ] 
 
 
         # 中间过程数组
@@ -286,6 +294,7 @@ class ReplayAnalyzer:
                         else:
                             if j.unit.finished_at:
                                 self.Fullinf[0][j.unit.owner][int(j.unit.finished_at/16)].append(self.Slist[j.unit.name][0])
+
                     elif j.name =='UnitInitEvent' and j.unit.race=='Zerg' and j.unit.name!='CreepTumorBurrowed' and j.unit.name!='CreepTumor' and j.unit.name!= 'CreepTumorQueen' and  j.unit.finished_at:
                         self.Fullinf[1][j.unit.owner][j.second].append(self.Slist['Drone'][0])
                     #if j.name == 'UnitTypeChangeEvent':
@@ -457,12 +466,19 @@ class ReplayAnalyzer:
                             for j in self.uie_players:
                                 self.uie_players[j][current_second]=[]
                     if i.unit_type_name in self.Ilist and current_second!=0:
+                        # 又能init又是单位的情况：虫族的菌毯和神族可折跃单位
                         if i.unit_type_name in self.Slist:
                             if i.second>=len(self.ube_players[i.unit.owner]):
-                                while len(self.ube_players[i.unit.owner])-1<=i.second:
-                                    n=len(self.ube_players[i.unit.owner])
-                                    self.ube_players[i.unit.owner][n]=[]
-                            self.ube_players[i.unit.owner][i.second].append(self.Ilist[i.unit_type_name])
+                                if i.unit.race == 'Protoss': # 如果是神族的话，就加入一个空列表
+                                    while len(self.ube_players[i.unit.owner])-1<=i.second:
+                                        n=len(self.ube_players[i.unit.owner])
+                                        self.ube_players[i.unit.owner][n]=[]
+                                    self.ube_players[i.unit.owner][i.second].append(self.Ilist[i.unit_type_name])
+                                elif i.unit.race == 'Zerg':
+                                    while len(self.uie_players[i.unit.owner])-1<=i.second:
+                                            n=len(self.uie_players[i.unit.owner])
+                                            self.uie_players[i.unit.owner][n]=[]
+                                    self.uie_players[i.unit.owner][i.second].append(self.Ilist[i.unit_type_name])
                         else:
                             if (not i.unit.finished_at) and (i.unit.killed_by==i.unit.owner) and i.unit_type_name!='CreepTumorBurrowed' and i.unit_type_name!='CreepTumor':
                                 self.uie_players[i.unit.owner][i.second].append(self.Ilist[i.unit_type_name]+"（建造后取消）")
@@ -556,6 +572,7 @@ class ReplayAnalyzer:
                                         self.uie_players[i.unit.owner][n]=[]
                                 self.uie_players[i.unit.owner][i.second].append(self.Clist[i.unit_type_name])
                         else:
+                            LOG.info("")
                             if i.second>=len(self.ube_players[i.unit.owner]):
                                 while len(self.ube_players[i.unit.owner])-1<=i.second:
                                     n=len(self.ube_players[i.unit.owner])
