@@ -4,17 +4,16 @@ A analyze Tool for starcraft2 replay ,  based of sc2reader.
 Communicate with me: *zanjune@163.com*
 
 ## Download
-下载 SC2ReplayAnalyzer 1.3.3: https://pan.baidu.com/s/1V-115EhV-T00InQX3ucX1w?pwd=alan 
+下载 SC2ReplayAnalyzer 1.5.0: https://pan.baidu.com/s/1naOzS-AuCNVyfJ21VSNTpA?pwd=sc2a
 
-提取码(Password)：alan 
-
+提取码(Password)：sc2a
 
 (环境已经整合，无需配置)
 
 (The environment is already integrated, no configuration needed.)
 
-## 使用文档
-https://zhuanlan.zhihu.com/p/668752079
+## 使用教学视频
+https://www.bilibili.com/video/BV135UvB6EhS/?vd_source=bcb1fe379a37616c934618bf7c73570b
 
 ## 更新历史
 #### 1.0.1更新内容：
@@ -127,6 +126,7 @@ txt文件和excel文件会生成在SC2ReplayAnalyzer文件夹中
 
 ## 1.5.2
 优化悬浮文字，添加了拖动和锁定的功能，生成的窗口尺寸进行了动态设置
+修复了部分toml修改不完全导致的Bug
 
 ## 截至目前更新，已经发现的bug
 P使用星空加速加速生产/科技升级后，会导致分析的生产/升级时间不准确

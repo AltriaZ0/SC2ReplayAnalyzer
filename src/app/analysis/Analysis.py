@@ -702,8 +702,8 @@ class ReplayAnalyzer:
                         if sum_born:
                             unit_born_record=','.join(sum_born)
                             # 在汇总表格中记录
-                            for unitborn in born_a_second:
-                                self.PdS[-1][8]+=','.join(unitborn)+','
+                            # for unitborn in born_a_second:
+                            self.PdS[-1][8]+=','.join(born_a_second)+','
                     dataPerSecond["unitBorn"] = unit_born_record
 
 
