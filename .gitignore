@@ -32,3 +32,6 @@ main.spec
 
 #temp file
 BatchB.vue
+
+# main.exe in tauri/bin
+front/src-tauri/bin/main.exe
