@@ -21,5 +21,4 @@ def analyse_core_cmd(args):
         AloneRep(rep_path, Path(rep_path).parent/"SC2ReplayAnalyzer", None)
     elif args.cmd == "multi":
         rep_dir = base_dir / "rep" 
-        MultiRep(rep_dir, Path(rep_dir).parent/"SC2ReplayAnalyzer", None)
-
+        MultiRep(rep_dir, rep_dir /"SC2ReplayAnalyzer", None)
