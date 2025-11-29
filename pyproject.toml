@@ -15,8 +15,13 @@ dependencies = [
   "pandas==2.2.3",
   "sc2reader==1.8.0",
   "pydantic>=2.12.4",
-  "openpyxl>=3.1.5"
+  "openpyxl>=3.1.5",
+  "tomli>=2.0.1",
+  "pydantic-settings>=2.0.0"
 ]
+
+[project.optional-dependencies]
+build = ["pyinstaller>=6.0"]
 
 [tool.setuptools]
 package-dir = {"" = "src"}
