@@ -99,7 +99,7 @@ def MultiRep(replay_dir:str | Path, output_dir: str | Path, options: dict[str, A
                         S.append(i)
 
     dirname=os.path.basename(replay_dir)
-    if options and options["exportSummary"]:
+    if options is None or options["exportSummary"] :
         S_to_excel = pd.DataFrame(S,columns=['ID','地图','种族','种族对抗',"比赛时间","比赛胜负",'升级顺序','建筑顺序','单位顺序',"rep地址"])
         S_to_excel.to_excel("{}/所有对局的建造列表({}目录下).xlsx".format(summary_dir,dirname),index=False)
 
