@@ -1,6 +1,6 @@
 from .putin import *
 from .Analysis import *
-
+from pathlib import Path
 # 分析功能的入口，选择处理分支
 
 def analyse_core(json_data):
@@ -15,9 +15,11 @@ def analyse_core(json_data):
 
         
 def analyse_core_cmd(args):
+    base_dir = Path.cwd()
     if args.cmd == "alone":
-        rep_path = "F:\Code\SC2RepAnalysis\\rep\\test.SC2Replay"
+        rep_path = base_dir / "rep" / "test.SC2Replay"
         AloneRep(rep_path, Path(rep_path).parent/"SC2ReplayAnalyzer", None)
     elif args.cmd == "multi":
-        rep_dir = "F:\Code\SC2RepAnalysis\\rep"
+        rep_dir = base_dir / "rep" 
         MultiRep(rep_dir, Path(rep_dir).parent/"SC2ReplayAnalyzer", None)
+

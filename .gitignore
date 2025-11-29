@@ -1,6 +1,5 @@
 Str.md
 
-
 # Rust
 target/
 Cargo.lock
@@ -18,6 +17,7 @@ logs/
 SC2RepAnalysis/
 SC2ReplayAnalyzer/
 replays/
+markdown/
 # VSCode
 .vscode/
 *.jks
