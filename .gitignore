@@ -29,6 +29,7 @@ __pycache__
 .SC2venv
 .env
 main.spec
+.venv
 
 #temp file
 BatchB.vue
