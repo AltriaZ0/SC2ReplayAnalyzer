@@ -97,7 +97,7 @@ A. 执行打包命令
 pyinstaller -F -w src\app\main.py --add-data ".venv\Lib\site-packages\sc2reader\data;sc2reader\data"
 ```
 
-B. 移动并重命名
+B. 移动打包好的可执行文件
 
 找到生成的文件：dist/main.exe
 
