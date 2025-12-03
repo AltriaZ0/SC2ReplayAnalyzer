@@ -1,0 +1,1265 @@
+{
+  "categories": {
+    "buildings/protoss": [
+      {
+        "id": "btn-building-protoss-assimilator",
+        "name": "btn-building-protoss-assimilator.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-assimilator.png"
+      },
+      {
+        "id": "btn-building-protoss-cyberneticscore",
+        "name": "btn-building-protoss-cyberneticscore.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-cyberneticscore.png"
+      },
+      {
+        "id": "btn-building-protoss-darkshrine",
+        "name": "btn-building-protoss-darkshrine.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-darkshrine.png"
+      },
+      {
+        "id": "btn-building-protoss-fleetbeacon",
+        "name": "btn-building-protoss-fleetbeacon.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-fleetbeacon.png"
+      },
+      {
+        "id": "btn-building-protoss-forge",
+        "name": "btn-building-protoss-forge.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-forge.png"
+      },
+      {
+        "id": "btn-building-protoss-gateway",
+        "name": "btn-building-protoss-gateway.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-gateway.png"
+      },
+      {
+        "id": "btn-building-protoss-nexus",
+        "name": "btn-building-protoss-nexus.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-nexus.png"
+      },
+      {
+        "id": "btn-building-protoss-photoncannon",
+        "name": "btn-building-protoss-photoncannon.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-photoncannon.png"
+      },
+      {
+        "id": "btn-building-protoss-pylon",
+        "name": "btn-building-protoss-pylon.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-pylon.png"
+      },
+      {
+        "id": "btn-building-protoss-roboticsfacility",
+        "name": "btn-building-protoss-roboticsfacility.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-roboticsfacility.png"
+      },
+      {
+        "id": "btn-building-protoss-roboticssupportbay",
+        "name": "btn-building-protoss-roboticssupportbay.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-roboticssupportbay.png"
+      },
+      {
+        "id": "btn-building-protoss-shieldbattery",
+        "name": "btn-building-protoss-shieldbattery.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-shieldbattery.png"
+      },
+      {
+        "id": "btn-building-protoss-stargate",
+        "name": "btn-building-protoss-stargate.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-stargate.png"
+      },
+      {
+        "id": "btn-building-protoss-templararchives",
+        "name": "btn-building-protoss-templararchives.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-templararchives.png"
+      },
+      {
+        "id": "btn-building-protoss-twilightcouncil",
+        "name": "btn-building-protoss-twilightcouncil.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-twilightcouncil.png"
+      },
+      {
+        "id": "btn-building-protoss-warpgate",
+        "name": "btn-building-protoss-warpgate.png",
+        "path": "/assets/icons/buildings/protoss/btn-building-protoss-warpgate.png"
+      }
+    ],
+    "buildings/terran": [
+      {
+        "id": "btn-building-terran-armory",
+        "name": "btn-building-terran-armory.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-armory.png"
+      },
+      {
+        "id": "btn-building-terran-barracks",
+        "name": "btn-building-terran-barracks.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-barracks.png"
+      },
+      {
+        "id": "btn-building-terran-bunker",
+        "name": "btn-building-terran-bunker.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-bunker.png"
+      },
+      {
+        "id": "btn-building-terran-commandcenter",
+        "name": "btn-building-terran-commandcenter.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-commandcenter.png"
+      },
+      {
+        "id": "btn-building-terran-engineeringbay",
+        "name": "btn-building-terran-engineeringbay.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-engineeringbay.png"
+      },
+      {
+        "id": "btn-building-terran-factory",
+        "name": "btn-building-terran-factory.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-factory.png"
+      },
+      {
+        "id": "btn-building-terran-fusioncore",
+        "name": "btn-building-terran-fusioncore.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-fusioncore.png"
+      },
+      {
+        "id": "btn-building-terran-ghostacademy",
+        "name": "btn-building-terran-ghostacademy.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-ghostacademy.png"
+      },
+      {
+        "id": "btn-building-terran-missileturret",
+        "name": "btn-building-terran-missileturret.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-missileturret.png"
+      },
+      {
+        "id": "btn-building-terran-planetaryfortress",
+        "name": "btn-building-terran-planetaryfortress.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-planetaryfortress.png"
+      },
+      {
+        "id": "btn-building-terran-reactor",
+        "name": "btn-building-terran-reactor.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-reactor.png"
+      },
+      {
+        "id": "btn-building-terran-refinery",
+        "name": "btn-building-terran-refinery.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-refinery.png"
+      },
+      {
+        "id": "btn-building-terran-sensordome",
+        "name": "btn-building-terran-sensordome.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-sensordome.png"
+      },
+      {
+        "id": "btn-building-terran-starport",
+        "name": "btn-building-terran-starport.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-starport.png"
+      },
+      {
+        "id": "btn-building-terran-supplydepot",
+        "name": "btn-building-terran-supplydepot.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-supplydepot.png"
+      },
+      {
+        "id": "btn-building-terran-supplydepotlowered",
+        "name": "btn-building-terran-supplydepotlowered.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-supplydepotlowered.png"
+      },
+      {
+        "id": "btn-building-terran-surveillancestation",
+        "name": "btn-building-terran-surveillancestation.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-surveillancestation.png"
+      },
+      {
+        "id": "btn-building-terran-techlab",
+        "name": "btn-building-terran-techlab.png",
+        "path": "/assets/icons/buildings/terran/btn-building-terran-techlab.png"
+      }
+    ],
+    "buildings/zerg": [
+      {
+        "id": "btn-building-zerg-banelingnest",
+        "name": "btn-building-zerg-banelingnest.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-banelingnest.png"
+      },
+      {
+        "id": "btn-building-zerg-creeptumor",
+        "name": "btn-building-zerg-creeptumor.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-creeptumor.png"
+      },
+      {
+        "id": "btn-building-zerg-evolutionchamber",
+        "name": "btn-building-zerg-evolutionchamber.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-evolutionchamber.png"
+      },
+      {
+        "id": "btn-building-zerg-extractor",
+        "name": "btn-building-zerg-extractor.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-extractor.png"
+      },
+      {
+        "id": "btn-building-zerg-greaterspire",
+        "name": "btn-building-zerg-greaterspire.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-greaterspire.png"
+      },
+      {
+        "id": "btn-building-zerg-hatchery",
+        "name": "btn-building-zerg-hatchery.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-hatchery.png"
+      },
+      {
+        "id": "btn-building-zerg-hive",
+        "name": "btn-building-zerg-hive.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-hive.png"
+      },
+      {
+        "id": "btn-building-zerg-hydraliskden",
+        "name": "btn-building-zerg-hydraliskden.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-hydraliskden.png"
+      },
+      {
+        "id": "btn-building-zerg-infestorpit",
+        "name": "btn-building-zerg-infestorpit.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-infestorpit.png"
+      },
+      {
+        "id": "btn-building-zerg-lair",
+        "name": "btn-building-zerg-lair.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-lair.png"
+      },
+      {
+        "id": "btn-building-zerg-lurkerden",
+        "name": "btn-building-zerg-lurkerden.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-lurkerden.png"
+      },
+      {
+        "id": "btn-building-zerg-nydusnetwork",
+        "name": "btn-building-zerg-nydusnetwork.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-nydusnetwork.png"
+      },
+      {
+        "id": "btn-building-zerg-nydusworm",
+        "name": "btn-building-zerg-nydusworm.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-nydusworm.png"
+      },
+      {
+        "id": "btn-building-zerg-roachwarren",
+        "name": "btn-building-zerg-roachwarren.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-roachwarren.png"
+      },
+      {
+        "id": "btn-building-zerg-spawningpool",
+        "name": "btn-building-zerg-spawningpool.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-spawningpool.png"
+      },
+      {
+        "id": "btn-building-zerg-spinecrawler",
+        "name": "btn-building-zerg-spinecrawler.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-spinecrawler.png"
+      },
+      {
+        "id": "btn-building-zerg-spire",
+        "name": "btn-building-zerg-spire.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-spire.png"
+      },
+      {
+        "id": "btn-building-zerg-sporecrawler",
+        "name": "btn-building-zerg-sporecrawler.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-sporecrawler.png"
+      },
+      {
+        "id": "btn-building-zerg-ultraliskcavern",
+        "name": "btn-building-zerg-ultraliskcavern.png",
+        "path": "/assets/icons/buildings/zerg/btn-building-zerg-ultraliskcavern.png"
+      }
+    ],
+    "units/protoss": [
+      {
+        "id": "btn-unit-protoss-adept",
+        "name": "btn-unit-protoss-adept.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-adept.png"
+      },
+      {
+        "id": "btn-unit-protoss-archon",
+        "name": "btn-unit-protoss-archon.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-archon.png"
+      },
+      {
+        "id": "btn-unit-protoss-carrier",
+        "name": "btn-unit-protoss-carrier.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-carrier.png"
+      },
+      {
+        "id": "btn-unit-protoss-colossus",
+        "name": "btn-unit-protoss-colossus.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-colossus.png"
+      },
+      {
+        "id": "btn-unit-protoss-darktemplar",
+        "name": "btn-unit-protoss-darktemplar.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-darktemplar.png"
+      },
+      {
+        "id": "btn-unit-protoss-disruptor",
+        "name": "btn-unit-protoss-disruptor.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-disruptor.png"
+      },
+      {
+        "id": "btn-unit-protoss-hightemplar",
+        "name": "btn-unit-protoss-hightemplar.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-hightemplar.png"
+      },
+      {
+        "id": "btn-unit-protoss-immortal",
+        "name": "btn-unit-protoss-immortal.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-immortal.png"
+      },
+      {
+        "id": "btn-unit-protoss-interceptor",
+        "name": "btn-unit-protoss-interceptor.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-interceptor.png"
+      },
+      {
+        "id": "btn-unit-protoss-mothership",
+        "name": "btn-unit-protoss-mothership.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-mothership.png"
+      },
+      {
+        "id": "btn-unit-protoss-mothershipcore",
+        "name": "btn-unit-protoss-mothershipcore.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-mothershipcore.png"
+      },
+      {
+        "id": "btn-unit-protoss-observer",
+        "name": "btn-unit-protoss-observer.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-observer.png"
+      },
+      {
+        "id": "btn-unit-protoss-oracle",
+        "name": "btn-unit-protoss-oracle.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-oracle.png"
+      },
+      {
+        "id": "btn-unit-protoss-phoenix",
+        "name": "btn-unit-protoss-phoenix.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-phoenix.png"
+      },
+      {
+        "id": "btn-unit-protoss-probe",
+        "name": "btn-unit-protoss-probe.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-probe.png"
+      },
+      {
+        "id": "btn-unit-protoss-sentry",
+        "name": "btn-unit-protoss-sentry.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-sentry.png"
+      },
+      {
+        "id": "btn-unit-protoss-stalker",
+        "name": "btn-unit-protoss-stalker.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-stalker.png"
+      },
+      {
+        "id": "btn-unit-protoss-tempest",
+        "name": "btn-unit-protoss-tempest.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-tempest.png"
+      },
+      {
+        "id": "btn-unit-protoss-warpprism",
+        "name": "btn-unit-protoss-warpprism.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-warpprism.png"
+      },
+      {
+        "id": "btn-unit-protoss-warpray",
+        "name": "btn-unit-protoss-warpray.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-warpray.png"
+      },
+      {
+        "id": "btn-unit-protoss-zealot",
+        "name": "btn-unit-protoss-zealot.png",
+        "path": "/assets/icons/units/protoss/btn-unit-protoss-zealot.png"
+      }
+    ],
+    "units/terran": [
+      {
+        "id": "btn-unit-terran-banshee",
+        "name": "btn-unit-terran-banshee.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-banshee.png"
+      },
+      {
+        "id": "btn-unit-terran-battlecruiser",
+        "name": "btn-unit-terran-battlecruiser.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-battlecruiser.png"
+      },
+      {
+        "id": "btn-unit-terran-cyclone",
+        "name": "btn-unit-terran-cyclone.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-cyclone.png"
+      },
+      {
+        "id": "btn-unit-terran-ghost",
+        "name": "btn-unit-terran-ghost.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-ghost.png"
+      },
+      {
+        "id": "btn-unit-terran-hellion",
+        "name": "btn-unit-terran-hellion.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-hellion.png"
+      },
+      {
+        "id": "btn-unit-terran-hellionbattlemode",
+        "name": "btn-unit-terran-hellionbattlemode.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-hellionbattlemode.png"
+      },
+      {
+        "id": "btn-unit-terran-liberator",
+        "name": "btn-unit-terran-liberator.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-liberator.png"
+      },
+      {
+        "id": "btn-unit-terran-marauder",
+        "name": "btn-unit-terran-marauder.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-marauder.png"
+      },
+      {
+        "id": "btn-unit-terran-marine",
+        "name": "btn-unit-terran-marine.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-marine.png"
+      },
+      {
+        "id": "btn-unit-terran-medivac",
+        "name": "btn-unit-terran-medivac.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-medivac.png"
+      },
+      {
+        "id": "btn-unit-terran-mule",
+        "name": "btn-unit-terran-mule.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-mule.png"
+      },
+      {
+        "id": "btn-unit-terran-raven",
+        "name": "btn-unit-terran-raven.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-raven.png"
+      },
+      {
+        "id": "btn-unit-terran-reaper",
+        "name": "btn-unit-terran-reaper.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-reaper.png"
+      },
+      {
+        "id": "btn-unit-terran-scv",
+        "name": "btn-unit-terran-scv.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-scv.png"
+      },
+      {
+        "id": "btn-unit-terran-siegetank",
+        "name": "btn-unit-terran-siegetank.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-siegetank.png"
+      },
+      {
+        "id": "btn-unit-terran-thor",
+        "name": "btn-unit-terran-thor.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-thor.png"
+      },
+      {
+        "id": "btn-unit-terran-vikingfighter",
+        "name": "btn-unit-terran-vikingfighter.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-vikingfighter.png"
+      },
+      {
+        "id": "btn-unit-terran-widowmine",
+        "name": "btn-unit-terran-widowmine.png",
+        "path": "/assets/icons/units/terran/btn-unit-terran-widowmine.png"
+      }
+    ],
+    "units/zerg": [
+      {
+        "id": "btn-unit-zerg-baneling",
+        "name": "btn-unit-zerg-baneling.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-baneling.png"
+      },
+      {
+        "id": "btn-unit-zerg-broodlord",
+        "name": "btn-unit-zerg-broodlord.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-broodlord.png"
+      },
+      {
+        "id": "btn-unit-zerg-corruptor",
+        "name": "btn-unit-zerg-corruptor.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-corruptor.png"
+      },
+      {
+        "id": "btn-unit-zerg-drone",
+        "name": "btn-unit-zerg-drone.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-drone.png"
+      },
+      {
+        "id": "btn-unit-zerg-egg",
+        "name": "btn-unit-zerg-egg.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-egg.png"
+      },
+      {
+        "id": "btn-unit-zerg-hydralisk",
+        "name": "btn-unit-zerg-hydralisk.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-hydralisk.png"
+      },
+      {
+        "id": "btn-unit-zerg-infestor",
+        "name": "btn-unit-zerg-infestor.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-infestor.png"
+      },
+      {
+        "id": "btn-unit-zerg-locust",
+        "name": "btn-unit-zerg-locust.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-locust.png"
+      },
+      {
+        "id": "btn-unit-zerg-locustflyer",
+        "name": "btn-unit-zerg-locustflyer.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-locustflyer.png"
+      },
+      {
+        "id": "btn-unit-zerg-lurker",
+        "name": "btn-unit-zerg-lurker.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-lurker.png"
+      },
+      {
+        "id": "btn-unit-zerg-mutalisk",
+        "name": "btn-unit-zerg-mutalisk.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-mutalisk.png"
+      },
+      {
+        "id": "btn-unit-zerg-overlord",
+        "name": "btn-unit-zerg-overlord.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-overlord.png"
+      },
+      {
+        "id": "btn-unit-zerg-overlordtransport",
+        "name": "btn-unit-zerg-overlordtransport.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-overlordtransport.png"
+      },
+      {
+        "id": "btn-unit-zerg-overseer",
+        "name": "btn-unit-zerg-overseer.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-overseer.png"
+      },
+      {
+        "id": "btn-unit-zerg-queen",
+        "name": "btn-unit-zerg-queen.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-queen.png"
+      },
+      {
+        "id": "btn-unit-zerg-ravager",
+        "name": "btn-unit-zerg-ravager.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-ravager.png"
+      },
+      {
+        "id": "btn-unit-zerg-roach",
+        "name": "btn-unit-zerg-roach.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-roach.png"
+      },
+      {
+        "id": "btn-unit-zerg-swarmhost",
+        "name": "btn-unit-zerg-swarmhost.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-swarmhost.png"
+      },
+      {
+        "id": "btn-unit-zerg-ultralisk",
+        "name": "btn-unit-zerg-ultralisk.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-ultralisk.png"
+      },
+      {
+        "id": "btn-unit-zerg-viper",
+        "name": "btn-unit-zerg-viper.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-viper.png"
+      },
+      {
+        "id": "btn-unit-zerg-zergling",
+        "name": "btn-unit-zerg-zergling.png",
+        "path": "/assets/icons/units/zerg/btn-unit-zerg-zergling.png"
+      }
+    ],
+    "upgrade/protoss": [
+      {
+        "id": "btn-ability-protoss-blink-color",
+        "name": "btn-ability-protoss-blink-color.png",
+        "path": "/assets/icons/upgrade/protoss/btn-ability-protoss-blink-color.png"
+      },
+      {
+        "id": "btn-ability-protoss-charge-color",
+        "name": "btn-ability-protoss-charge-color.png",
+        "path": "/assets/icons/upgrade/protoss/btn-ability-protoss-charge-color.png"
+      },
+      {
+        "id": "btn-ability-protoss-stealth-blink",
+        "name": "btn-ability-protoss-stealth-blink.png",
+        "path": "/assets/icons/upgrade/protoss/btn-ability-protoss-stealth-blink.png"
+      },
+      {
+        "id": "btn-building-protoss-warpgate",
+        "name": "btn-building-protoss-warpgate.png",
+        "path": "/assets/icons/upgrade/protoss/btn-building-protoss-warpgate.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-airarmorlevel1",
+        "name": "btn-upgrade-protoss-airarmorlevel1.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airarmorlevel1.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-airarmorlevel2",
+        "name": "btn-upgrade-protoss-airarmorlevel2.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airarmorlevel2.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-airarmorlevel3",
+        "name": "btn-upgrade-protoss-airarmorlevel3.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airarmorlevel3.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-airweaponslevel1",
+        "name": "btn-upgrade-protoss-airweaponslevel1.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airweaponslevel1.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-airweaponslevel2",
+        "name": "btn-upgrade-protoss-airweaponslevel2.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airweaponslevel2.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-airweaponslevel3",
+        "name": "btn-upgrade-protoss-airweaponslevel3.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airweaponslevel3.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-extendedthermallance",
+        "name": "btn-upgrade-protoss-extendedthermallance.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-extendedthermallance.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-fluxvanes",
+        "name": "btn-upgrade-protoss-fluxvanes.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-fluxvanes.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-graviticbooster",
+        "name": "btn-upgrade-protoss-graviticbooster.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-graviticbooster.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-graviticdrive",
+        "name": "btn-upgrade-protoss-graviticdrive.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-graviticdrive.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-groundarmorlevel1",
+        "name": "btn-upgrade-protoss-groundarmorlevel1.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundarmorlevel1.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-groundarmorlevel2",
+        "name": "btn-upgrade-protoss-groundarmorlevel2.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundarmorlevel2.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-groundarmorlevel3",
+        "name": "btn-upgrade-protoss-groundarmorlevel3.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundarmorlevel3.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-groundweaponslevel1",
+        "name": "btn-upgrade-protoss-groundweaponslevel1.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundweaponslevel1.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-groundweaponslevel2",
+        "name": "btn-upgrade-protoss-groundweaponslevel2.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundweaponslevel2.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-groundweaponslevel3",
+        "name": "btn-upgrade-protoss-groundweaponslevel3.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundweaponslevel3.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-phoenixrange",
+        "name": "btn-upgrade-protoss-phoenixrange.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-phoenixrange.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-resonatingglaives-orange",
+        "name": "btn-upgrade-protoss-resonatingglaives-orange.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-resonatingglaives-orange.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-shieldslevel1",
+        "name": "btn-upgrade-protoss-shieldslevel1.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-shieldslevel1.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-shieldslevel2",
+        "name": "btn-upgrade-protoss-shieldslevel2.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-shieldslevel2.png"
+      },
+      {
+        "id": "btn-upgrade-protoss-shieldslevel3",
+        "name": "btn-upgrade-protoss-shieldslevel3.png",
+        "path": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-shieldslevel3.png"
+      }
+    ],
+    "upgrade/terran": [
+      {
+        "id": "btn-ability-terran-cloak-color",
+        "name": "btn-ability-terran-cloak-color.png",
+        "path": "/assets/icons/upgrade/terran/btn-ability-terran-cloak-color.png"
+      },
+      {
+        "id": "btn-ability-terran-punishergrenade-color",
+        "name": "btn-ability-terran-punishergrenade-color.png",
+        "path": "/assets/icons/upgrade/terran/btn-ability-terran-punishergrenade-color.png"
+      },
+      {
+        "id": "btn-ability-terran-stimpack-color",
+        "name": "btn-ability-terran-stimpack-color.png",
+        "path": "/assets/icons/upgrade/terran/btn-ability-terran-stimpack-color.png"
+      },
+      {
+        "id": "btn-techupgrade-terran-combatshield-color",
+        "name": "btn-techupgrade-terran-combatshield-color.png",
+        "path": "/assets/icons/upgrade/terran/btn-techupgrade-terran-combatshield-color.png"
+      },
+      {
+        "id": "btn-upgrade-terran-advanceballistics",
+        "name": "btn-upgrade-terran-advanceballistics.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-advanceballistics.png"
+      },
+      {
+        "id": "btn-upgrade-terran-buildingarmor",
+        "name": "btn-upgrade-terran-buildingarmor.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-buildingarmor.png"
+      },
+      {
+        "id": "btn-upgrade-terran-caduceusreactor",
+        "name": "btn-upgrade-terran-caduceusreactor.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-caduceusreactor.png"
+      },
+      {
+        "id": "btn-upgrade-terran-hisecautotracking",
+        "name": "btn-upgrade-terran-hisecautotracking.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-hisecautotracking.png"
+      },
+      {
+        "id": "btn-upgrade-terran-hyperflightrotors",
+        "name": "btn-upgrade-terran-hyperflightrotors.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-hyperflightrotors.png"
+      },
+      {
+        "id": "btn-upgrade-terran-infantryarmorlevel1",
+        "name": "btn-upgrade-terran-infantryarmorlevel1.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryarmorlevel1.png"
+      },
+      {
+        "id": "btn-upgrade-terran-infantryarmorlevel2",
+        "name": "btn-upgrade-terran-infantryarmorlevel2.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryarmorlevel2.png"
+      },
+      {
+        "id": "btn-upgrade-terran-infantryarmorlevel3",
+        "name": "btn-upgrade-terran-infantryarmorlevel3.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryarmorlevel3.png"
+      },
+      {
+        "id": "btn-upgrade-terran-infantryweaponslevel1",
+        "name": "btn-upgrade-terran-infantryweaponslevel1.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryweaponslevel1.png"
+      },
+      {
+        "id": "btn-upgrade-terran-infantryweaponslevel2",
+        "name": "btn-upgrade-terran-infantryweaponslevel2.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryweaponslevel2.png"
+      },
+      {
+        "id": "btn-upgrade-terran-infantryweaponslevel3",
+        "name": "btn-upgrade-terran-infantryweaponslevel3.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryweaponslevel3.png"
+      },
+      {
+        "id": "btn-upgrade-terran-infernalpreigniter",
+        "name": "btn-upgrade-terran-infernalpreigniter.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-infernalpreigniter.png"
+      },
+      {
+        "id": "btn-upgrade-terran-interferencematrix",
+        "name": "btn-upgrade-terran-interferencematrix.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-interferencematrix.png"
+      },
+      {
+        "id": "btn-upgrade-terran-magfieldaccelerator",
+        "name": "btn-upgrade-terran-magfieldaccelerator.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-magfieldaccelerator.png"
+      },
+      {
+        "id": "btn-upgrade-terran-medivacemergencythrusters",
+        "name": "btn-upgrade-terran-medivacemergencythrusters.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-medivacemergencythrusters.png"
+      },
+      {
+        "id": "btn-upgrade-terran-researchdrillingclaws",
+        "name": "btn-upgrade-terran-researchdrillingclaws.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-researchdrillingclaws.png"
+      },
+      {
+        "id": "btn-upgrade-terran-shipplatinglevel1",
+        "name": "btn-upgrade-terran-shipplatinglevel1.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipplatinglevel1.png"
+      },
+      {
+        "id": "btn-upgrade-terran-shipplatinglevel2",
+        "name": "btn-upgrade-terran-shipplatinglevel2.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipplatinglevel2.png"
+      },
+      {
+        "id": "btn-upgrade-terran-shipplatinglevel3",
+        "name": "btn-upgrade-terran-shipplatinglevel3.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipplatinglevel3.png"
+      },
+      {
+        "id": "btn-upgrade-terran-shipweaponslevel1",
+        "name": "btn-upgrade-terran-shipweaponslevel1.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipweaponslevel1.png"
+      },
+      {
+        "id": "btn-upgrade-terran-shipweaponslevel2",
+        "name": "btn-upgrade-terran-shipweaponslevel2.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipweaponslevel2.png"
+      },
+      {
+        "id": "btn-upgrade-terran-shipweaponslevel3",
+        "name": "btn-upgrade-terran-shipweaponslevel3.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipweaponslevel3.png"
+      },
+      {
+        "id": "btn-upgrade-terran-transformationservos",
+        "name": "btn-upgrade-terran-transformationservos.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-transformationservos.png"
+      },
+      {
+        "id": "btn-upgrade-terran-vehicleplatinglevel1",
+        "name": "btn-upgrade-terran-vehicleplatinglevel1.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleplatinglevel1.png"
+      },
+      {
+        "id": "btn-upgrade-terran-vehicleplatinglevel2",
+        "name": "btn-upgrade-terran-vehicleplatinglevel2.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleplatinglevel2.png"
+      },
+      {
+        "id": "btn-upgrade-terran-vehicleplatinglevel3",
+        "name": "btn-upgrade-terran-vehicleplatinglevel3.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleplatinglevel3.png"
+      },
+      {
+        "id": "btn-upgrade-terran-vehicleweaponslevel1",
+        "name": "btn-upgrade-terran-vehicleweaponslevel1.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleweaponslevel1.png"
+      },
+      {
+        "id": "btn-upgrade-terran-vehicleweaponslevel2",
+        "name": "btn-upgrade-terran-vehicleweaponslevel2.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleweaponslevel2.png"
+      },
+      {
+        "id": "btn-upgrade-terran-vehicleweaponslevel3",
+        "name": "btn-upgrade-terran-vehicleweaponslevel3.png",
+        "path": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleweaponslevel3.png"
+      }
+    ],
+    "upgrade/zerg": [
+      {
+        "id": "btn-ability-zerg-burrow-color",
+        "name": "btn-ability-zerg-burrow-color.png",
+        "path": "/assets/icons/upgrade/zerg/btn-ability-zerg-burrow-color.png"
+      },
+      {
+        "id": "btn-ability-zerg-neuralparasite-color",
+        "name": "btn-ability-zerg-neuralparasite-color.png",
+        "path": "/assets/icons/upgrade/zerg/btn-ability-zerg-neuralparasite-color.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-adaptivecarapace",
+        "name": "btn-upgrade-zerg-adaptivecarapace.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-adaptivecarapace.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-adaptivetalons",
+        "name": "btn-upgrade-zerg-adaptivetalons.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-adaptivetalons.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-adrenalglands",
+        "name": "btn-upgrade-zerg-adrenalglands.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-adrenalglands.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-airattacks-level0",
+        "name": "btn-upgrade-zerg-airattacks-level0.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level0.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-airattacks-level1",
+        "name": "btn-upgrade-zerg-airattacks-level1.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level1.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-airattacks-level2",
+        "name": "btn-upgrade-zerg-airattacks-level2.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level2.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-airattacks-level3",
+        "name": "btn-upgrade-zerg-airattacks-level3.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level3.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-anabolicsynthesis",
+        "name": "btn-upgrade-zerg-anabolicsynthesis.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-anabolicsynthesis.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-centrifugalhooks",
+        "name": "btn-upgrade-zerg-centrifugalhooks.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-centrifugalhooks.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-chitinousplating",
+        "name": "btn-upgrade-zerg-chitinousplating.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-chitinousplating.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-flyercarapace-level0",
+        "name": "btn-upgrade-zerg-flyercarapace-level0.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level0.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-flyercarapace-level1",
+        "name": "btn-upgrade-zerg-flyercarapace-level1.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level1.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-flyercarapace-level2",
+        "name": "btn-upgrade-zerg-flyercarapace-level2.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level2.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-flyercarapace-level3",
+        "name": "btn-upgrade-zerg-flyercarapace-level3.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level3.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-frenzy",
+        "name": "btn-upgrade-zerg-frenzy.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-frenzy.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-glialreconstitution",
+        "name": "btn-upgrade-zerg-glialreconstitution.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-glialreconstitution.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-groovedspines",
+        "name": "btn-upgrade-zerg-groovedspines.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groovedspines.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-groundcarapace-level0",
+        "name": "btn-upgrade-zerg-groundcarapace-level0.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level0.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-groundcarapace-level1",
+        "name": "btn-upgrade-zerg-groundcarapace-level1.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level1.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-groundcarapace-level2",
+        "name": "btn-upgrade-zerg-groundcarapace-level2.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level2.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-groundcarapace-level3",
+        "name": "btn-upgrade-zerg-groundcarapace-level3.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level3.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-meleeattacks-level0",
+        "name": "btn-upgrade-zerg-meleeattacks-level0.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level0.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-meleeattacks-level1",
+        "name": "btn-upgrade-zerg-meleeattacks-level1.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level1.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-meleeattacks-level2",
+        "name": "btn-upgrade-zerg-meleeattacks-level2.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level2.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-meleeattacks-level3",
+        "name": "btn-upgrade-zerg-meleeattacks-level3.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level3.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-metabolicboost",
+        "name": "btn-upgrade-zerg-metabolicboost.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-metabolicboost.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-missileattacks-level0",
+        "name": "btn-upgrade-zerg-missileattacks-level0.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level0.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-missileattacks-level1",
+        "name": "btn-upgrade-zerg-missileattacks-level1.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level1.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-missileattacks-level2",
+        "name": "btn-upgrade-zerg-missileattacks-level2.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level2.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-missileattacks-level3",
+        "name": "btn-upgrade-zerg-missileattacks-level3.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level3.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-muscularaugments",
+        "name": "btn-upgrade-zerg-muscularaugments.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-muscularaugments.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-pneumatizedcarapace",
+        "name": "btn-upgrade-zerg-pneumatizedcarapace.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-pneumatizedcarapace.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-seismicspines",
+        "name": "btn-upgrade-zerg-seismicspines.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-seismicspines.png"
+      },
+      {
+        "id": "btn-upgrade-zerg-tunnelingclaws",
+        "name": "btn-upgrade-zerg-tunnelingclaws.png",
+        "path": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-tunnelingclaws.png"
+      }
+    ]
+  },
+  "mapping": {
+    "btn-building-protoss-assimilator": "/assets/icons/buildings/protoss/btn-building-protoss-assimilator.png",
+    "btn-building-protoss-cyberneticscore": "/assets/icons/buildings/protoss/btn-building-protoss-cyberneticscore.png",
+    "btn-building-protoss-darkshrine": "/assets/icons/buildings/protoss/btn-building-protoss-darkshrine.png",
+    "btn-building-protoss-fleetbeacon": "/assets/icons/buildings/protoss/btn-building-protoss-fleetbeacon.png",
+    "btn-building-protoss-forge": "/assets/icons/buildings/protoss/btn-building-protoss-forge.png",
+    "btn-building-protoss-gateway": "/assets/icons/buildings/protoss/btn-building-protoss-gateway.png",
+    "btn-building-protoss-nexus": "/assets/icons/buildings/protoss/btn-building-protoss-nexus.png",
+    "btn-building-protoss-photoncannon": "/assets/icons/buildings/protoss/btn-building-protoss-photoncannon.png",
+    "btn-building-protoss-pylon": "/assets/icons/buildings/protoss/btn-building-protoss-pylon.png",
+    "btn-building-protoss-roboticsfacility": "/assets/icons/buildings/protoss/btn-building-protoss-roboticsfacility.png",
+    "btn-building-protoss-roboticssupportbay": "/assets/icons/buildings/protoss/btn-building-protoss-roboticssupportbay.png",
+    "btn-building-protoss-shieldbattery": "/assets/icons/buildings/protoss/btn-building-protoss-shieldbattery.png",
+    "btn-building-protoss-stargate": "/assets/icons/buildings/protoss/btn-building-protoss-stargate.png",
+    "btn-building-protoss-templararchives": "/assets/icons/buildings/protoss/btn-building-protoss-templararchives.png",
+    "btn-building-protoss-twilightcouncil": "/assets/icons/buildings/protoss/btn-building-protoss-twilightcouncil.png",
+    "btn-building-protoss-warpgate": "/assets/icons/upgrade/protoss/btn-building-protoss-warpgate.png",
+    "btn-building-terran-armory": "/assets/icons/buildings/terran/btn-building-terran-armory.png",
+    "btn-building-terran-barracks": "/assets/icons/buildings/terran/btn-building-terran-barracks.png",
+    "btn-building-terran-bunker": "/assets/icons/buildings/terran/btn-building-terran-bunker.png",
+    "btn-building-terran-commandcenter": "/assets/icons/buildings/terran/btn-building-terran-commandcenter.png",
+    "btn-building-terran-engineeringbay": "/assets/icons/buildings/terran/btn-building-terran-engineeringbay.png",
+    "btn-building-terran-factory": "/assets/icons/buildings/terran/btn-building-terran-factory.png",
+    "btn-building-terran-fusioncore": "/assets/icons/buildings/terran/btn-building-terran-fusioncore.png",
+    "btn-building-terran-ghostacademy": "/assets/icons/buildings/terran/btn-building-terran-ghostacademy.png",
+    "btn-building-terran-missileturret": "/assets/icons/buildings/terran/btn-building-terran-missileturret.png",
+    "btn-building-terran-planetaryfortress": "/assets/icons/buildings/terran/btn-building-terran-planetaryfortress.png",
+    "btn-building-terran-reactor": "/assets/icons/buildings/terran/btn-building-terran-reactor.png",
+    "btn-building-terran-refinery": "/assets/icons/buildings/terran/btn-building-terran-refinery.png",
+    "btn-building-terran-sensordome": "/assets/icons/buildings/terran/btn-building-terran-sensordome.png",
+    "btn-building-terran-starport": "/assets/icons/buildings/terran/btn-building-terran-starport.png",
+    "btn-building-terran-supplydepot": "/assets/icons/buildings/terran/btn-building-terran-supplydepot.png",
+    "btn-building-terran-supplydepotlowered": "/assets/icons/buildings/terran/btn-building-terran-supplydepotlowered.png",
+    "btn-building-terran-surveillancestation": "/assets/icons/buildings/terran/btn-building-terran-surveillancestation.png",
+    "btn-building-terran-techlab": "/assets/icons/buildings/terran/btn-building-terran-techlab.png",
+    "btn-building-zerg-banelingnest": "/assets/icons/buildings/zerg/btn-building-zerg-banelingnest.png",
+    "btn-building-zerg-creeptumor": "/assets/icons/buildings/zerg/btn-building-zerg-creeptumor.png",
+    "btn-building-zerg-evolutionchamber": "/assets/icons/buildings/zerg/btn-building-zerg-evolutionchamber.png",
+    "btn-building-zerg-extractor": "/assets/icons/buildings/zerg/btn-building-zerg-extractor.png",
+    "btn-building-zerg-greaterspire": "/assets/icons/buildings/zerg/btn-building-zerg-greaterspire.png",
+    "btn-building-zerg-hatchery": "/assets/icons/buildings/zerg/btn-building-zerg-hatchery.png",
+    "btn-building-zerg-hive": "/assets/icons/buildings/zerg/btn-building-zerg-hive.png",
+    "btn-building-zerg-hydraliskden": "/assets/icons/buildings/zerg/btn-building-zerg-hydraliskden.png",
+    "btn-building-zerg-infestorpit": "/assets/icons/buildings/zerg/btn-building-zerg-infestorpit.png",
+    "btn-building-zerg-lair": "/assets/icons/buildings/zerg/btn-building-zerg-lair.png",
+    "btn-building-zerg-lurkerden": "/assets/icons/buildings/zerg/btn-building-zerg-lurkerden.png",
+    "btn-building-zerg-nydusnetwork": "/assets/icons/buildings/zerg/btn-building-zerg-nydusnetwork.png",
+    "btn-building-zerg-nydusworm": "/assets/icons/buildings/zerg/btn-building-zerg-nydusworm.png",
+    "btn-building-zerg-roachwarren": "/assets/icons/buildings/zerg/btn-building-zerg-roachwarren.png",
+    "btn-building-zerg-spawningpool": "/assets/icons/buildings/zerg/btn-building-zerg-spawningpool.png",
+    "btn-building-zerg-spinecrawler": "/assets/icons/buildings/zerg/btn-building-zerg-spinecrawler.png",
+    "btn-building-zerg-spire": "/assets/icons/buildings/zerg/btn-building-zerg-spire.png",
+    "btn-building-zerg-sporecrawler": "/assets/icons/buildings/zerg/btn-building-zerg-sporecrawler.png",
+    "btn-building-zerg-ultraliskcavern": "/assets/icons/buildings/zerg/btn-building-zerg-ultraliskcavern.png",
+    "btn-unit-protoss-adept": "/assets/icons/units/protoss/btn-unit-protoss-adept.png",
+    "btn-unit-protoss-archon": "/assets/icons/units/protoss/btn-unit-protoss-archon.png",
+    "btn-unit-protoss-carrier": "/assets/icons/units/protoss/btn-unit-protoss-carrier.png",
+    "btn-unit-protoss-colossus": "/assets/icons/units/protoss/btn-unit-protoss-colossus.png",
+    "btn-unit-protoss-darktemplar": "/assets/icons/units/protoss/btn-unit-protoss-darktemplar.png",
+    "btn-unit-protoss-disruptor": "/assets/icons/units/protoss/btn-unit-protoss-disruptor.png",
+    "btn-unit-protoss-hightemplar": "/assets/icons/units/protoss/btn-unit-protoss-hightemplar.png",
+    "btn-unit-protoss-immortal": "/assets/icons/units/protoss/btn-unit-protoss-immortal.png",
+    "btn-unit-protoss-interceptor": "/assets/icons/units/protoss/btn-unit-protoss-interceptor.png",
+    "btn-unit-protoss-mothership": "/assets/icons/units/protoss/btn-unit-protoss-mothership.png",
+    "btn-unit-protoss-mothershipcore": "/assets/icons/units/protoss/btn-unit-protoss-mothershipcore.png",
+    "btn-unit-protoss-observer": "/assets/icons/units/protoss/btn-unit-protoss-observer.png",
+    "btn-unit-protoss-oracle": "/assets/icons/units/protoss/btn-unit-protoss-oracle.png",
+    "btn-unit-protoss-phoenix": "/assets/icons/units/protoss/btn-unit-protoss-phoenix.png",
+    "btn-unit-protoss-probe": "/assets/icons/units/protoss/btn-unit-protoss-probe.png",
+    "btn-unit-protoss-sentry": "/assets/icons/units/protoss/btn-unit-protoss-sentry.png",
+    "btn-unit-protoss-stalker": "/assets/icons/units/protoss/btn-unit-protoss-stalker.png",
+    "btn-unit-protoss-tempest": "/assets/icons/units/protoss/btn-unit-protoss-tempest.png",
+    "btn-unit-protoss-warpprism": "/assets/icons/units/protoss/btn-unit-protoss-warpprism.png",
+    "btn-unit-protoss-warpray": "/assets/icons/units/protoss/btn-unit-protoss-warpray.png",
+    "btn-unit-protoss-zealot": "/assets/icons/units/protoss/btn-unit-protoss-zealot.png",
+    "btn-unit-terran-banshee": "/assets/icons/units/terran/btn-unit-terran-banshee.png",
+    "btn-unit-terran-battlecruiser": "/assets/icons/units/terran/btn-unit-terran-battlecruiser.png",
+    "btn-unit-terran-cyclone": "/assets/icons/units/terran/btn-unit-terran-cyclone.png",
+    "btn-unit-terran-ghost": "/assets/icons/units/terran/btn-unit-terran-ghost.png",
+    "btn-unit-terran-hellion": "/assets/icons/units/terran/btn-unit-terran-hellion.png",
+    "btn-unit-terran-hellionbattlemode": "/assets/icons/units/terran/btn-unit-terran-hellionbattlemode.png",
+    "btn-unit-terran-liberator": "/assets/icons/units/terran/btn-unit-terran-liberator.png",
+    "btn-unit-terran-marauder": "/assets/icons/units/terran/btn-unit-terran-marauder.png",
+    "btn-unit-terran-marine": "/assets/icons/units/terran/btn-unit-terran-marine.png",
+    "btn-unit-terran-medivac": "/assets/icons/units/terran/btn-unit-terran-medivac.png",
+    "btn-unit-terran-mule": "/assets/icons/units/terran/btn-unit-terran-mule.png",
+    "btn-unit-terran-raven": "/assets/icons/units/terran/btn-unit-terran-raven.png",
+    "btn-unit-terran-reaper": "/assets/icons/units/terran/btn-unit-terran-reaper.png",
+    "btn-unit-terran-scv": "/assets/icons/units/terran/btn-unit-terran-scv.png",
+    "btn-unit-terran-siegetank": "/assets/icons/units/terran/btn-unit-terran-siegetank.png",
+    "btn-unit-terran-thor": "/assets/icons/units/terran/btn-unit-terran-thor.png",
+    "btn-unit-terran-vikingfighter": "/assets/icons/units/terran/btn-unit-terran-vikingfighter.png",
+    "btn-unit-terran-widowmine": "/assets/icons/units/terran/btn-unit-terran-widowmine.png",
+    "btn-unit-zerg-baneling": "/assets/icons/units/zerg/btn-unit-zerg-baneling.png",
+    "btn-unit-zerg-broodlord": "/assets/icons/units/zerg/btn-unit-zerg-broodlord.png",
+    "btn-unit-zerg-corruptor": "/assets/icons/units/zerg/btn-unit-zerg-corruptor.png",
+    "btn-unit-zerg-drone": "/assets/icons/units/zerg/btn-unit-zerg-drone.png",
+    "btn-unit-zerg-egg": "/assets/icons/units/zerg/btn-unit-zerg-egg.png",
+    "btn-unit-zerg-hydralisk": "/assets/icons/units/zerg/btn-unit-zerg-hydralisk.png",
+    "btn-unit-zerg-infestor": "/assets/icons/units/zerg/btn-unit-zerg-infestor.png",
+    "btn-unit-zerg-locust": "/assets/icons/units/zerg/btn-unit-zerg-locust.png",
+    "btn-unit-zerg-locustflyer": "/assets/icons/units/zerg/btn-unit-zerg-locustflyer.png",
+    "btn-unit-zerg-lurker": "/assets/icons/units/zerg/btn-unit-zerg-lurker.png",
+    "btn-unit-zerg-mutalisk": "/assets/icons/units/zerg/btn-unit-zerg-mutalisk.png",
+    "btn-unit-zerg-overlord": "/assets/icons/units/zerg/btn-unit-zerg-overlord.png",
+    "btn-unit-zerg-overlordtransport": "/assets/icons/units/zerg/btn-unit-zerg-overlordtransport.png",
+    "btn-unit-zerg-overseer": "/assets/icons/units/zerg/btn-unit-zerg-overseer.png",
+    "btn-unit-zerg-queen": "/assets/icons/units/zerg/btn-unit-zerg-queen.png",
+    "btn-unit-zerg-ravager": "/assets/icons/units/zerg/btn-unit-zerg-ravager.png",
+    "btn-unit-zerg-roach": "/assets/icons/units/zerg/btn-unit-zerg-roach.png",
+    "btn-unit-zerg-swarmhost": "/assets/icons/units/zerg/btn-unit-zerg-swarmhost.png",
+    "btn-unit-zerg-ultralisk": "/assets/icons/units/zerg/btn-unit-zerg-ultralisk.png",
+    "btn-unit-zerg-viper": "/assets/icons/units/zerg/btn-unit-zerg-viper.png",
+    "btn-unit-zerg-zergling": "/assets/icons/units/zerg/btn-unit-zerg-zergling.png",
+    "btn-ability-protoss-blink-color": "/assets/icons/upgrade/protoss/btn-ability-protoss-blink-color.png",
+    "btn-ability-protoss-charge-color": "/assets/icons/upgrade/protoss/btn-ability-protoss-charge-color.png",
+    "btn-ability-protoss-stealth-blink": "/assets/icons/upgrade/protoss/btn-ability-protoss-stealth-blink.png",
+    "btn-upgrade-protoss-airarmorlevel1": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airarmorlevel1.png",
+    "btn-upgrade-protoss-airarmorlevel2": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airarmorlevel2.png",
+    "btn-upgrade-protoss-airarmorlevel3": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airarmorlevel3.png",
+    "btn-upgrade-protoss-airweaponslevel1": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airweaponslevel1.png",
+    "btn-upgrade-protoss-airweaponslevel2": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airweaponslevel2.png",
+    "btn-upgrade-protoss-airweaponslevel3": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-airweaponslevel3.png",
+    "btn-upgrade-protoss-extendedthermallance": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-extendedthermallance.png",
+    "btn-upgrade-protoss-fluxvanes": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-fluxvanes.png",
+    "btn-upgrade-protoss-graviticbooster": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-graviticbooster.png",
+    "btn-upgrade-protoss-graviticdrive": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-graviticdrive.png",
+    "btn-upgrade-protoss-groundarmorlevel1": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundarmorlevel1.png",
+    "btn-upgrade-protoss-groundarmorlevel2": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundarmorlevel2.png",
+    "btn-upgrade-protoss-groundarmorlevel3": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundarmorlevel3.png",
+    "btn-upgrade-protoss-groundweaponslevel1": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundweaponslevel1.png",
+    "btn-upgrade-protoss-groundweaponslevel2": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundweaponslevel2.png",
+    "btn-upgrade-protoss-groundweaponslevel3": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-groundweaponslevel3.png",
+    "btn-upgrade-protoss-phoenixrange": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-phoenixrange.png",
+    "btn-upgrade-protoss-resonatingglaives-orange": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-resonatingglaives-orange.png",
+    "btn-upgrade-protoss-shieldslevel1": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-shieldslevel1.png",
+    "btn-upgrade-protoss-shieldslevel2": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-shieldslevel2.png",
+    "btn-upgrade-protoss-shieldslevel3": "/assets/icons/upgrade/protoss/btn-upgrade-protoss-shieldslevel3.png",
+    "btn-ability-terran-cloak-color": "/assets/icons/upgrade/terran/btn-ability-terran-cloak-color.png",
+    "btn-ability-terran-punishergrenade-color": "/assets/icons/upgrade/terran/btn-ability-terran-punishergrenade-color.png",
+    "btn-ability-terran-stimpack-color": "/assets/icons/upgrade/terran/btn-ability-terran-stimpack-color.png",
+    "btn-techupgrade-terran-combatshield-color": "/assets/icons/upgrade/terran/btn-techupgrade-terran-combatshield-color.png",
+    "btn-upgrade-terran-advanceballistics": "/assets/icons/upgrade/terran/btn-upgrade-terran-advanceballistics.png",
+    "btn-upgrade-terran-buildingarmor": "/assets/icons/upgrade/terran/btn-upgrade-terran-buildingarmor.png",
+    "btn-upgrade-terran-caduceusreactor": "/assets/icons/upgrade/terran/btn-upgrade-terran-caduceusreactor.png",
+    "btn-upgrade-terran-hisecautotracking": "/assets/icons/upgrade/terran/btn-upgrade-terran-hisecautotracking.png",
+    "btn-upgrade-terran-hyperflightrotors": "/assets/icons/upgrade/terran/btn-upgrade-terran-hyperflightrotors.png",
+    "btn-upgrade-terran-infantryarmorlevel1": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryarmorlevel1.png",
+    "btn-upgrade-terran-infantryarmorlevel2": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryarmorlevel2.png",
+    "btn-upgrade-terran-infantryarmorlevel3": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryarmorlevel3.png",
+    "btn-upgrade-terran-infantryweaponslevel1": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryweaponslevel1.png",
+    "btn-upgrade-terran-infantryweaponslevel2": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryweaponslevel2.png",
+    "btn-upgrade-terran-infantryweaponslevel3": "/assets/icons/upgrade/terran/btn-upgrade-terran-infantryweaponslevel3.png",
+    "btn-upgrade-terran-infernalpreigniter": "/assets/icons/upgrade/terran/btn-upgrade-terran-infernalpreigniter.png",
+    "btn-upgrade-terran-interferencematrix": "/assets/icons/upgrade/terran/btn-upgrade-terran-interferencematrix.png",
+    "btn-upgrade-terran-magfieldaccelerator": "/assets/icons/upgrade/terran/btn-upgrade-terran-magfieldaccelerator.png",
+    "btn-upgrade-terran-medivacemergencythrusters": "/assets/icons/upgrade/terran/btn-upgrade-terran-medivacemergencythrusters.png",
+    "btn-upgrade-terran-researchdrillingclaws": "/assets/icons/upgrade/terran/btn-upgrade-terran-researchdrillingclaws.png",
+    "btn-upgrade-terran-shipplatinglevel1": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipplatinglevel1.png",
+    "btn-upgrade-terran-shipplatinglevel2": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipplatinglevel2.png",
+    "btn-upgrade-terran-shipplatinglevel3": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipplatinglevel3.png",
+    "btn-upgrade-terran-shipweaponslevel1": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipweaponslevel1.png",
+    "btn-upgrade-terran-shipweaponslevel2": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipweaponslevel2.png",
+    "btn-upgrade-terran-shipweaponslevel3": "/assets/icons/upgrade/terran/btn-upgrade-terran-shipweaponslevel3.png",
+    "btn-upgrade-terran-transformationservos": "/assets/icons/upgrade/terran/btn-upgrade-terran-transformationservos.png",
+    "btn-upgrade-terran-vehicleplatinglevel1": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleplatinglevel1.png",
+    "btn-upgrade-terran-vehicleplatinglevel2": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleplatinglevel2.png",
+    "btn-upgrade-terran-vehicleplatinglevel3": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleplatinglevel3.png",
+    "btn-upgrade-terran-vehicleweaponslevel1": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleweaponslevel1.png",
+    "btn-upgrade-terran-vehicleweaponslevel2": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleweaponslevel2.png",
+    "btn-upgrade-terran-vehicleweaponslevel3": "/assets/icons/upgrade/terran/btn-upgrade-terran-vehicleweaponslevel3.png",
+    "btn-ability-zerg-burrow-color": "/assets/icons/upgrade/zerg/btn-ability-zerg-burrow-color.png",
+    "btn-ability-zerg-neuralparasite-color": "/assets/icons/upgrade/zerg/btn-ability-zerg-neuralparasite-color.png",
+    "btn-upgrade-zerg-adaptivecarapace": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-adaptivecarapace.png",
+    "btn-upgrade-zerg-adaptivetalons": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-adaptivetalons.png",
+    "btn-upgrade-zerg-adrenalglands": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-adrenalglands.png",
+    "btn-upgrade-zerg-airattacks-level0": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level0.png",
+    "btn-upgrade-zerg-airattacks-level1": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level1.png",
+    "btn-upgrade-zerg-airattacks-level2": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level2.png",
+    "btn-upgrade-zerg-airattacks-level3": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-airattacks-level3.png",
+    "btn-upgrade-zerg-anabolicsynthesis": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-anabolicsynthesis.png",
+    "btn-upgrade-zerg-centrifugalhooks": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-centrifugalhooks.png",
+    "btn-upgrade-zerg-chitinousplating": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-chitinousplating.png",
+    "btn-upgrade-zerg-flyercarapace-level0": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level0.png",
+    "btn-upgrade-zerg-flyercarapace-level1": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level1.png",
+    "btn-upgrade-zerg-flyercarapace-level2": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level2.png",
+    "btn-upgrade-zerg-flyercarapace-level3": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-flyercarapace-level3.png",
+    "btn-upgrade-zerg-frenzy": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-frenzy.png",
+    "btn-upgrade-zerg-glialreconstitution": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-glialreconstitution.png",
+    "btn-upgrade-zerg-groovedspines": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groovedspines.png",
+    "btn-upgrade-zerg-groundcarapace-level0": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level0.png",
+    "btn-upgrade-zerg-groundcarapace-level1": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level1.png",
+    "btn-upgrade-zerg-groundcarapace-level2": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level2.png",
+    "btn-upgrade-zerg-groundcarapace-level3": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-groundcarapace-level3.png",
+    "btn-upgrade-zerg-meleeattacks-level0": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level0.png",
+    "btn-upgrade-zerg-meleeattacks-level1": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level1.png",
+    "btn-upgrade-zerg-meleeattacks-level2": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level2.png",
+    "btn-upgrade-zerg-meleeattacks-level3": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-meleeattacks-level3.png",
+    "btn-upgrade-zerg-metabolicboost": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-metabolicboost.png",
+    "btn-upgrade-zerg-missileattacks-level0": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level0.png",
+    "btn-upgrade-zerg-missileattacks-level1": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level1.png",
+    "btn-upgrade-zerg-missileattacks-level2": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level2.png",
+    "btn-upgrade-zerg-missileattacks-level3": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-missileattacks-level3.png",
+    "btn-upgrade-zerg-muscularaugments": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-muscularaugments.png",
+    "btn-upgrade-zerg-pneumatizedcarapace": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-pneumatizedcarapace.png",
+    "btn-upgrade-zerg-seismicspines": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-seismicspines.png",
+    "btn-upgrade-zerg-tunnelingclaws": "/assets/icons/upgrade/zerg/btn-upgrade-zerg-tunnelingclaws.png"
+  }
+}
