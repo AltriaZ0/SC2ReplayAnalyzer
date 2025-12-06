@@ -4,8 +4,8 @@
     class="banner-container" 
     :style="containerStyle"
     data-tauri-drag-region
+    v-html="text || '示例提示文字'"
   >
-    {{ text || '示例提示文字' }}
   </div>
 </template>
 
@@ -65,8 +65,15 @@ onMounted(async () => {
   // 监听从主窗口发来的事件
   const appWindow = getCurrentWindow()
 
-  unlisten = await listen('screen-banner:update', async(event) => {
-    const payload = event.payload as { text: string; style: Record<string, any>; behavior: Record<string, any> }
+  unlisten = await listen('screen-banner:update', async (event) => {
+    // 完善类型定义，包含 locked
+    const payload = event.payload as { 
+      text: string; 
+      style: Record<string, any>; 
+      behavior: Record<string, any>;
+      locked: boolean;
+    }
+    
     text.value = payload.text
     containerStyle.value = {
       ...payload.style,
@@ -79,9 +86,16 @@ onMounted(async () => {
       whiteSpace: 'pre', 
       
       margin: '0',
-      pointerEvents: payload.locked ? 'none' : 'auto'
+      pointerEvents: payload.locked ? 'none' : 'auto',
+      
+      // 使用 block 布局，覆盖可能的 flex 设置
+      display: 'block',
+      alignItems: 'unset',
+      justifyContent: 'unset'
     }
-      await appWindow.setIgnoreCursorEvents(payload.locked)
+    
+    // 处理鼠标穿透状态
+    await appWindow.setIgnoreCursorEvents(payload.locked)
     if (!payload.locked) {
       await appWindow.setFocus()
     }
