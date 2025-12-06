@@ -17,14 +17,15 @@
       <section class="left">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
           <label class="label" style="margin-bottom: 0;">提醒文字 (支持插入图标)</label>
-          <button class="btn-xs" @click="openIconModal">➕ 插入单位图标</button>
+          <!-- [新增] 图标管理按钮 -->
+          <button class="btn-xs" @click="openIconModal">📂 管理/插入图标</button>
         </div>
         <textarea
           ref="textareaRef"
           v-model="state.text"
           class="textarea"
           rows="5"
-          placeholder="示例提示文字"
+          placeholder="在这里输入提醒文字…&#10;例如：12:00 [icon1] 出动。"
           @blur="updateCursorPos"
           @click="updateCursorPos"
           @keyup="updateCursorPos"
@@ -165,145 +166,148 @@
           <div style="margin-top: 20px; font-size: 12px; color: #666; line-height: 1.5;">
             提示：<br/>
             1. 只有点击上方 <b>"解锁位置"</b> 后，悬浮窗才可以被鼠标选中并拖动。<br/>
-            2. 锁定后，鼠标会穿透悬浮窗（点击穿透），不影响你操作背后的内容。
+            2. 锁定后，鼠标会穿透悬浮窗（点击穿透），不影响你操作背后的内容。<br/>
+            3. 使用 <code>[标签名]</code> 插入图标，标签名在弹窗中可修改。
          </div>
       </section>
 
       <section class="right">
         <div class="preview-title">预览</div>
         <div class="preview">
-          <!-- 改用 v-html 渲染图片 -->
+          <!-- [修改] 改用 v-html 渲染图片 -->
           <div class="banner" :style="bannerStyle" v-html="parsedHtmlText"></div>
         </div>
       </section>
     </div>
 
-    <!-- 图标选择模态框 -->
+    <!-- [新增] 图标管理模态框 -->
     <div v-if="showIconModal" class="modal-overlay" @click.self="showIconModal = false">
       <div class="modal-content">
         <div class="modal-header">
-          <h3>选择图标</h3>
-          <button class="close-btn" @click="showIconModal = false">×</button>
-        </div>
-        
-        <!-- 分类 Tab -->
-        <div class="tabs">
-          <button 
-            v-for="catName in categoryNames" 
-            :key="catName"
-            class="tab-btn"
-            :class="{ active: currentTab === catName }"
-            @click="currentTab = catName"
-          >
-            {{ catName }}
-          </button>
-        </div>
-
-        <!-- 图标列表 -->
-        <div class="icon-grid">
-          <div 
-            v-for="item in currentIcons" 
-            :key="item.id"
-            class="icon-item"
-            @click="insertIcon(item.id)"
-            :title="item.name"
-          >
-            <img :src="item.path" loading="lazy" />
-            <span class="icon-name">{{ item.id }}</span>
+          <h3>自定义图标库</h3>
+          <div style="display:flex; gap: 10px;">
+            <input type="file" ref="fileInputRef" accept="image/*" multiple style="display: none" @change="handleFileUpload" />
+            <button class="btn primary" @click="triggerFileUpload">📤 上传图标</button>
+            <button class="close-btn" @click="showIconModal = false">×</button>
           </div>
         </div>
+        
+        <div class="modal-body">
+          <div v-if="userIcons.length === 0" class="empty-state">
+            暂无图标，请点击右上角上传图片。
+          </div>
+          <div v-else class="icon-grid">
+            <div v-for="(icon, index) in userIcons" :key="index" class="icon-card">
+              <div class="img-wrapper" @click="insertIcon(icon.name)" title="点击插入">
+                <img :src="icon.src" loading="lazy" />
+              </div>
+              <div class="edit-wrapper">
+                <span class="bracket">[</span>
+                <input v-model="icon.name" class="name-input" @change="saveIconsToStorage" />
+                <span class="bracket">]</span>
+                <button class="delete-btn" @click="deleteIcon(index)" title="删除">×</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">已存储 {{ userIcons.length }} 个图标 (本地缓存)</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, computed, onMounted, onUnmounted, watch, ref } from 'vue'
+import { reactive, computed, onMounted, onUnmounted, watch, ref } from 'vue' // [修改] 引入 ref
 import { WebviewWindow } from '@tauri-apps/api/webviewWindow'
 import { LogicalSize } from '@tauri-apps/api/window'
 import {listen, emit } from '@tauri-apps/api/event'
 import { register as registerShortcut, unregisterAll } from '@tauri-apps/plugin-global-shortcut'
-import iconsLibRaw from '../../assets/icons_library.json'
 
 const BANNER_LABEL = 'screen-banner'
 let bannerWin: WebviewWindow | null = null
 
-// ---------------- 图标数据逻辑 ----------------
-type IconItem = { id: string; name: string; path: string }
-type IconsLibrary = { categories: Record<string, IconItem[]>; mapping: Record<string, string> }
-
-const iconsLib = iconsLibRaw as IconsLibrary
-const categoryNames = computed(() => Object.keys(iconsLib.categories).sort())
-const currentTab = ref('')
-
-if (categoryNames.value.length > 0) {
-  currentTab.value = categoryNames.value[0]
-}
-
-const currentIcons = computed(() => {
-  return iconsLib.categories[currentTab.value] || []
-})
-
-// 自定义映射表（如有需要可在此添加特殊映射）
-//TODO
-const customMapping: Record<string, string> = {}
-
-function getIconPath(key: string) {
-  if (customMapping[key]) {
-    const mappedId = customMapping[key]
-    return iconsLib.mapping[mappedId.toLowerCase()]
-  }
-  return iconsLib.mapping[key.toLowerCase()]
-}
-
-// ---------------- 交互逻辑 ----------------
+// ---------------- [新增] 自定义图标逻辑 ----------------
+interface UserIcon { name: string; src: string; }
 const showIconModal = ref(false)
-const textareaRef = ref<HTMLTextAreaElement | null>(null)
-const cursorPosition = ref(0)
+const userIcons = ref<UserIcon[]>([])
+const fileInputRef = ref<HTMLInputElement | null>(null)
+const textareaRef = ref<HTMLTextAreaElement | null>(null) // [新增]
+const cursorPosition = ref(0) // [新增]
 
-function openIconModal() {
-  showIconModal.value = true
-  if (!currentTab.value && categoryNames.value.length > 0) {
-    currentTab.value = categoryNames.value[0]
+function openIconModal() { showIconModal.value = true }
+function triggerFileUpload() { fileInputRef.value?.click() }
+
+async function handleFileUpload(event: Event) {
+  const target = event.target as HTMLInputElement
+  const files = target.files
+  if (!files || files.length === 0) return
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i]
+    let safeName = file.name.split('.')[0].toLowerCase().replace(/\s+/g, '_')
+    let counter = 1; let tempName = safeName
+    while (userIcons.value.some(icon => icon.name === tempName)) { tempName = `${safeName}_${counter}`; counter++ }
+    const base64 = await toBase64(file)
+    userIcons.value.push({ name: tempName, src: base64 as string })
   }
+  saveIconsToStorage()
+  target.value = ''
+}
+
+function toBase64(file: File) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader()
+    reader.readAsDataURL(file)
+    reader.onload = () => resolve(reader.result)
+    reader.onerror = error => reject(error)
+  })
+}
+
+function deleteIcon(index: number) {
+  if (confirm('确定删除?')) { userIcons.value.splice(index, 1); saveIconsToStorage() }
+}
+
+const ICONS_STORE_KEY = 'user-custom-icons'
+function saveIconsToStorage() {
+  try { localStorage.setItem(ICONS_STORE_KEY, JSON.stringify(userIcons.value)) } catch (e) { alert('存储空间不足'); }
+}
+function loadIconsFromStorage() {
+  const raw = localStorage.getItem(ICONS_STORE_KEY)
+  if (raw) { try { userIcons.value = JSON.parse(raw) } catch (e) { console.error(e) } }
 }
 
 function updateCursorPos() {
-  if (textareaRef.value) {
-    cursorPosition.value = textareaRef.value.selectionStart
-  }
+  if (textareaRef.value) cursorPosition.value = textareaRef.value.selectionStart
 }
 
-function insertIcon(iconId: string) {
-  const insertText = `[${iconId}]`
+function insertIcon(tagName: string) {
+  const insertText = `[${tagName}]`
   const originalText = state.text || ''
-  
   const p = cursorPosition.value
   state.text = originalText.slice(0, p) + insertText + originalText.slice(p)
   cursorPosition.value += insertText.length
-  
   showIconModal.value = false
-  
-  setTimeout(() => {
-    textareaRef.value?.focus()
-    textareaRef.value?.setSelectionRange(cursorPosition.value, cursorPosition.value)
-  }, 100)
+  setTimeout(() => { textareaRef.value?.focus(); textareaRef.value?.setSelectionRange(cursorPosition.value, cursorPosition.value) }, 100)
 }
 
-// HTML 解析
+function escapeHtml(text: string) {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;")
+}
+
+// [新增] HTML 解析 computed
 const parsedHtmlText = computed(() => {
   if (!state.text) return '示例提示文字'
-  // 正则匹配 [Key]
-  return state.text.replace(/\[([a-zA-Z0-9_\-\s]+)\]/g, (match, key) => {
-    const path = getIconPath(key.trim())
-    if (path) {
-      return `<img src="${path}" style="height: 1.2em; vertical-align: text-bottom; margin: 0 1px;" alt="${key}"/>`
+  const safeText = escapeHtml(state.text)
+  return safeText.replace(/\[([a-zA-Z0-9_\-\u4e00-\u9fa5\s]+)\]/g, (match, key) => {
+    const cleanKey = key.trim()
+    const icon = userIcons.value.find(i => i.name === cleanKey)
+    if (icon) {
+      return `<img src="${icon.src}" style="height: 1.2em; vertical-align: text-bottom; margin: 0 1px;" alt="${cleanKey}"/>`
     }
     return match
   })
 })
 
-// ---------------- 状态 ----------------
+// ---------------- 状态 (保持原有) ----------------
 const state = reactive({
   text: '',
   show: false,
@@ -349,12 +353,12 @@ const bannerStyle = computed(() => ({
   lineHeight: String(state.style.lineHeight),
   padding: `${state.style.paddingY}px ${state.style.paddingX}px`,
   boxShadow: shadowMap[state.style.shadow],
-  whiteSpace: 'pre-wrap' as const, 
+  whiteSpace: 'pre-wrap' as const, // [修改] 强制换行策略以支持 v-html
   maxWidth: '1200px',
   width: 'fit-content',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
-  cursor: (state.locked ? 'default' : 'move') as 'default' | 'move',
+  cursor: (state.locked ? 'default' : 'move') as 'default' | 'move', // [修复] TS 类型断言
   pointerEvents: (state.locked ? 'none' : 'auto') as 'none' | 'auto',
 }))
 
@@ -384,8 +388,7 @@ async function updateLockState() {
 
 function emitUpdate() {
   emit('screen-banner:update', {
-    text: parsedHtmlText.value, // 发送 HTML
-    isHtml: true,               // 标记
+    text: parsedHtmlText.value, // [修改] 发送解析后的 HTML
     style: bannerStyle.value,
     layout: {
       zIndex: state.layout.zIndex,
@@ -576,6 +579,7 @@ function onKey(e: KeyboardEvent) {
 // 生命周期
 onMounted(async () => {
   loadFromLocal()
+  loadIconsFromStorage() // [新增] 加载自定义图标
   window.addEventListener('keydown', onKey)
 
   // 全局快捷键：在 Windows 任意界面按 `，重置闪烁倒计时
@@ -661,7 +665,16 @@ watch(
 .btn:hover { filter: brightness(1.1); }
 .btn.primary { background: #3b82f6; border-color: transparent; color: white; }
 
-/* 小按钮样式 */
+.preview-title { font-size: 12px; color: #a6adbb; margin-bottom: 8px; }
+.preview { border: 1px dashed #2a2f36; border-radius: 12px; padding: 10px; background: #0f1113; }
+.banner { width: 100%; text-align: left; border-radius: 10px; }
+
+/* 悬浮条容器（如果以后用 teleport） */
+.floating-banner { position: fixed; top: 0; left: 0; right: 0; }
+
+code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+/* ---------------- [新增] 模态框样式 ---------------- */
 .btn-xs {
   border: 1px solid #3b82f6;
   background: rgba(59, 130, 246, 0.1);
@@ -673,16 +686,6 @@ watch(
 }
 .btn-xs:hover { background: rgba(59, 130, 246, 0.2); }
 
-.preview-title { font-size: 12px; color: #a6adbb; margin-bottom: 8px; }
-.preview { border: 1px dashed #2a2f36; border-radius: 12px; padding: 10px; background: #0f1113; }
-.banner { width: 100%; text-align: left; border-radius: 10px; }
-
-/* 悬浮条容器（如果以后用 teleport） */
-.floating-banner { position: fixed; top: 0; left: 0; right: 0; }
-
-code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-
-/* 模态框样式 */
 .modal-overlay {
   position: fixed; top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0,0,0,0.7);
@@ -702,55 +705,73 @@ code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Libe
   border-bottom: 1px solid #374151;
   display: flex; justify-content: space-between; align-items: center;
 }
+.modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  flex: 1;
+}
+.modal-footer {
+  padding: 10px 20px;
+  border-top: 1px solid #374151;
+  font-size: 11px;
+  color: #6b7280;
+  text-align: right;
+}
 .close-btn { background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 20px; }
-
-/* 滚动条美化 */
-.tabs { 
-  display: flex; 
-  border-bottom: 1px solid #374151; 
-  overflow-x: auto; 
-  background: #161a1f;
-}
-.tabs::-webkit-scrollbar { height: 6px; }
-.tabs::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
-
-.tab-btn {
-  flex-shrink: 0;
-  padding: 12px 16px; 
-  background: none; 
-  border: none; 
-  color: #9ca3af; 
-  cursor: pointer;
-  border-bottom: 2px solid transparent;
-  font-size: 13px;
-  transition: all 0.2s;
-}
-.tab-btn:hover { color: #e5e7eb; background: #23272e; }
-.tab-btn.active { color: #3b82f6; border-bottom-color: #3b82f6; background: #262b36; font-weight: 500; }
+.empty-state { text-align: center; color: #6b7280; padding: 40px; }
 
 .icon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
-  gap: 12px;
-  padding: 20px;
-  overflow-y: auto;
-  background: #1f242d;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 16px;
 }
-.icon-item {
-  display: flex; flex-direction: column; align-items: center;
-  cursor: pointer; padding: 10px; border-radius: 8px;
-  transition: background 0.2s;
+.icon-card {
   background: #262b36;
   border: 1px solid #374151;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.icon-item:hover { background: #3b82f6; border-color: #3b82f6; }
-.icon-item img { width: 36px; height: 36px; object-fit: contain; }
-.icon-name { 
-  font-size: 10px; 
-  color: #d1d5db; 
-  margin-top: 6px; 
-  text-align: center; 
-  word-break: break-word; 
-  line-height: 1.2;
+.icon-card:hover { border-color: #4b5563; }
+
+.img-wrapper {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #161a1f;
+  border-radius: 4px;
+  margin-bottom: 8px;
 }
+.img-wrapper img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+.edit-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 12px;
+  color: #9ca3af;
+}
+.bracket { opacity: 0.5; font-family: monospace; }
+.name-input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #4b5563;
+  color: #e5e7eb;
+  font-family: monospace;
+  width: 100%;
+  text-align: center;
+  margin: 0 4px;
+  font-size: 11px;
+}
+.name-input:focus { outline: none; border-bottom: 1px solid #3b82f6; color: #3b82f6; }
+.delete-btn {
+  background: none; border: none; color: #ef4444; cursor: pointer; font-size: 16px;
+  opacity: 0.5; margin-left: 2px;
+}
+.delete-btn:hover { opacity: 1; }
 </style>
